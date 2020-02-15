@@ -1,18 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const SignInForm = () => {
+import API from '../API'
 
-    return(
-        <div>
-            <form>
-                <label>Username</label>
-                <input onChange={null} type='text'/>
-                <label>Password</label>
-                <input onChange={null} type='password'/>
-                <input type='submit'/>
-            </form>
-        </div>
-    )
+class SignInForm  extends Component {
+    state = {
+        username: '',
+        password: ''
+    }
+
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value})
+    }
+
+    handleSubmit = (e) =>{
+        e.preventDefault()
+
+        API.signIn(this.state.username, this.state.password)
+        .then(data => {
+            if (data.error) throw Error(data.error)
+            this.props.signIn(data)
+            // this.props.history.push(null) //redirects the user to their page 
+        }).catch(error => alert(error))  //change alert to a nicer notification
+    }
+
+    render(){
+        return(
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Username</label>
+                    <input onChange={this.handleChange} type='text' name='username'/>
+                    <label>Password</label>
+                    <input onChange={this.handleChange} type='password' name='password'/>
+                    <input type='submit'/>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default SignInForm
