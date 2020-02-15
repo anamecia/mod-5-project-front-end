@@ -1,9 +1,12 @@
 import React from 'react'
 
-const SignInPage = () => {
+import SignInForm from './SignInForm'
+
+const SignInPage = ({ signIn, history }) => {
 
     return(
         <div>
+            <SignInForm signIn={signIn} history={history}/>
         </div>
     )
 }
