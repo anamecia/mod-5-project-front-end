@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
+import NavBar from './components/NavBar'
 import SignUpPage from './components/SignUpPage'
 import SignInPage from './components/SignInPage'
 import API from './API'
@@ -14,6 +15,11 @@ class App extends Component{
     signIn = (data) => {
         this.setState({user: data.user})
         localStorage.token = data.token
+    }
+
+    signOut = () =>{
+        this.setState({user: null})
+        localStorage.removeItem('token')
     }
 
     componentDidMount = () => {
@@ -30,6 +36,7 @@ class App extends Component{
     render(){
         return(
             <div>
+                <NavBar signOut={this.signOut}/>
                 <Switch>
                     <Route path='/signup' component={SignUpPage}/>
                     <Route path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
