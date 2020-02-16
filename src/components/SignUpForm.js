@@ -1,22 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const SignUpForm = () => {
+import API from '../API'
 
-    return(
-        <div>
-            <form>
-                <label>Username</label>
-                <input onChange={null} type='text'/>
-                <label>Date of Birth</label>
-                <input onChange={null} type='date'/>
-                <label>Password</label>
-                <input onChange={null} type='password'/>
-                <label>Password Confirmation</label>
-                <input onChange={null} type='password'/>
-                <input type='submit'/>
-            </form>
-        </div>
-    )
+class SignUpForm extends Component {
+    state = {
+        username: '',
+        dateOfBirth: '',
+        password: '',
+        passwordConfirmation: ''
+    }
+
+    handleChange = (e) => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        API.signUp(this.state.username, this.state.dateOfBirth, this.state.password, this.state.passwordConfirmation)
+        .then(data => {
+            if (data.error) throw Error(data.error)
+            this.props.signIn(data)
+            this.props.history.push('/') //redirects the user to their page 
+            }).catch(error => alert(error)) //change alert to a nicer notification
+    }
+
+    render(){
+        return(
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Username</label>
+                    <input onChange={this.handleChange} type='text' name='username'/>
+                    <label>Date of Birth</label>
+                    <input onChange={this.handleChange} type='date' name='dateOfBirth'/>
+                    <label>Password</label>
+                    <input onChange={this.handleChange} type='password' name='password'/>
+                    <label>Password Confirmation</label>
+                    <input onChange={this.handleChange} type='password' name='passwordConfirmation'/>
+                    <input type='submit'/>
+                </form>
+            </div>
+        )
+    } 
 }
 
 export default SignUpForm
