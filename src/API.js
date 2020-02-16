@@ -1,5 +1,14 @@
 const railsBaseUrl = 'http://localhost:3000/'
 const signInUrl = railsBaseUrl + 'signin'
+const validateUrl = railsBaseUrl + 'validate'
+
+const get = (url) => {
+    return fetch(url, {
+        headers:{
+            Authorization: localStorage.token
+        }
+    }).then(resp => resp.json())
+}
 
 const post = (url,data) => {
     return fetch(url,{
@@ -14,4 +23,6 @@ const post = (url,data) => {
 
 const signIn = (username, password) => post(signInUrl,{username, password})
 
-export default { signIn }
+const validate = () => get(validateUrl)
+
+export default { signIn, validate}
