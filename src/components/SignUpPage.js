@@ -2,11 +2,11 @@ import React from 'react'
 
 import SignUpForm from './SignUpForm'
 
-const SignUpPage = () => {
+const SignUpPage = ({ signIn, history }) => {
 
     return(
         <div>
-            <SignUpForm/>
+            <SignUpForm signIn={signIn} history={history}/>
         </div>
     )
 }
