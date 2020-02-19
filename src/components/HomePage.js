@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import Weather from './Weather'
 
 class HomePage extends Component{
     state = {
         latitude: null,
-        longitude: null
-
+        longitude: null,
     }
 
     checkBrowserGeolocation = () => {
@@ -28,13 +28,21 @@ class HomePage extends Component{
     }
 
     componentDidMount(){
-        this.checkBrowserGeolocation()
+         this.checkBrowserGeolocation()
     }
 
     render(){
+        
         return(
             <div>
-                <p>HomePage</p>
+                {this.state.latitude &&
+                <div>
+                    <div>
+                        <Weather 
+                            latitude={this.state.latitude}
+                            longitude={this.state.longitude}/>
+                    </div>
+                </div>}
             </div>
         )
     }

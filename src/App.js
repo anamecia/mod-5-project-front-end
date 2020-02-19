@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
+// require('dotenv').config()
 
 import NavBar from './components/NavBar'
 import SignUpPage from './components/SignUpPage'
 import SignInPage from './components/SignInPage'
 import API from './API'
 import HomePage from './components/HomePage'
-
 
 class App extends Component{
     state = {

@@ -3,7 +3,13 @@ const signInUrl = railsBaseUrl + 'signin'
 const signUpUrl = railsBaseUrl + 'signup'
 const validateUrl = railsBaseUrl + 'validate'
 
+const weatherBreezoApi = `https://api.breezometer.com/weather/v1/current-conditions?`
+
 const get = (url) => {
+    return fetch(url).then(resp => resp.json())
+}
+
+const getWithAuth = (url) => {
     return fetch(url, {
         headers: {
             Authorization: localStorage.token
@@ -26,6 +32,8 @@ const signIn = (username, password) => post(signInUrl,{username, password})
 
 const signUp = (username, dateOfBirth, password, passwordConfirmation) => post(signUpUrl, {user: {username, date_of_birth: dateOfBirth, password, password_confirmation: passwordConfirmation}})
 
-const validate = () => get(validateUrl)
+const validate = () => getWithAuth(validateUrl)
 
-export default { signIn, signUp, validate}
+const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
+
+export default { signIn, signUp, validate, getWeather}
