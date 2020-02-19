@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import SignUpPage from './components/SignUpPage'
 import SignInPage from './components/SignInPage'
 import API from './API'
+import HomePage from './components/HomePage'
 
 
 class App extends Component{
@@ -38,6 +39,7 @@ class App extends Component{
             <div>
                 <NavBar signOut={this.signOut}/>
                 <Switch>
+                    <Route path='/home' component={HomePage}/>
                     <Route path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
                 </Switch>
