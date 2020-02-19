@@ -8,8 +8,8 @@ class AirQuality extends Component{
     }
 
     componentDidMount = () => {
-        // API.getAirQuality(this.props.latitude, this.props.longitude, process.env.BREEZO_KEY)
-        // .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))
+        API.getAirQuality(this.props.latitude, this.props.longitude, process.env.BREEZO_KEY)
+        .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))
     }
 
     render(){

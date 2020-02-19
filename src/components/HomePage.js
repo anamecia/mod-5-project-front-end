@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Weather from './Weather'
-import AirQuality from './AirQuality'
+import Forecast from '../containers/Forecast'
+
 
 class HomePage extends Component{
     state = {
@@ -33,25 +33,10 @@ class HomePage extends Component{
     }
 
     render(){
-        
+        const {latitude, longitude} = this.state
         return(
             <div>
-                {this.state.latitude &&
-                <div>
-                    <div>
-                        <Weather 
-                            latitude={this.state.latitude}
-                            longitude={this.state.longitude}
-                        />
-                    </div>
-                    <div>
-                        <AirQuality
-                        latitude={this.state.latitude}
-                        longitude={this.state.longitude}
-                        />
-                    </div>
-                </div>}
-                
+                {latitude && <Forecast latitude={latitude} longitude={longitude}/>}  
             </div>
         )
     }
