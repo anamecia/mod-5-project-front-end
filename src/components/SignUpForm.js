@@ -20,7 +20,7 @@ class SignUpForm extends Component {
         .then(data => {
             if (data.error) throw Error(data.error)
             this.props.signIn(data)
-            this.props.history.push('/') //redirects the user to their page 
+            this.props.history.push('/home') 
             }).catch(error => alert(error)) //change alert to a nicer notification
     }
 
