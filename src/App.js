@@ -7,6 +7,7 @@ import SignUpPage from './components/SignUpPage'
 import SignInPage from './components/SignInPage'
 import API from './API'
 import HomePage from './components/HomePage'
+import MyDrugs from './components/MyDrugs'
 
 class App extends Component{
     state = {
@@ -42,6 +43,7 @@ class App extends Component{
                     <Route path='/home' component={HomePage}/>
                     <Route path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
+                    <Route path='/mydrugs' component={MyDrugs}/>
                 </Switch>
             </div>
         )
