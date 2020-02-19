@@ -3,7 +3,8 @@ const signInUrl = railsBaseUrl + 'signin'
 const signUpUrl = railsBaseUrl + 'signup'
 const validateUrl = railsBaseUrl + 'validate'
 
-const weatherBreezoApi = `https://api.breezometer.com/weather/v1/current-conditions?`
+const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
+const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
 
 const get = (url) => {
     return fetch(url).then(resp => resp.json())
@@ -36,4 +37,6 @@ const validate = () => getWithAuth(validateUrl)
 
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
-export default { signIn, signUp, validate, getWeather}
+const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
+
+export default { signIn, signUp, validate, getWeather, getAirQuality}

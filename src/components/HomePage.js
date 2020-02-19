@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Weather from './Weather'
+import AirQuality from './AirQuality'
 
 class HomePage extends Component{
     state = {
@@ -40,9 +41,17 @@ class HomePage extends Component{
                     <div>
                         <Weather 
                             latitude={this.state.latitude}
-                            longitude={this.state.longitude}/>
+                            longitude={this.state.longitude}
+                        />
+                    </div>
+                    <div>
+                        <AirQuality
+                        latitude={this.state.latitude}
+                        longitude={this.state.longitude}
+                        />
                     </div>
                 </div>}
+                
             </div>
         )
     }
