@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
-// require('dotenv').config()
 
 import NavBar from './components/NavBar'
 import SignUpPage from './components/SignUpPage'

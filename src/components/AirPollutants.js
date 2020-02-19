@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import API from '../API'
+import API from '../API'
 
 class AirPollutants extends Component{
 
@@ -8,7 +8,7 @@ class AirPollutants extends Component{
     }
 
     componentDidMount = () => {
-        // API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.BREEZO_KEY)
+        // API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
         // .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData.data.pollutants}))
         // add catch to handle errors
     }
