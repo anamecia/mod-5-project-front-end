@@ -39,4 +39,6 @@ const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `l
 
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
-export default { signIn, signUp, validate, getWeather, getAirQuality}
+const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=health_recommendations, pollutants_concentrations, sources_and_effects`)
+
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants }
