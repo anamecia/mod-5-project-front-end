@@ -5,6 +5,7 @@ const validateUrl = railsBaseUrl + 'validate'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
+const pollenCountBreezoApi = 'https://api.breezometer.com/pollen/v2/forecast/daily?'
 
 const get = (url) => {
     return fetch(url).then(resp => resp.json())
@@ -41,4 +42,6 @@ const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoAp
 
 const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=health_recommendations, pollutants_concentrations, sources_and_effects`)
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants }
+const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
+
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount}
