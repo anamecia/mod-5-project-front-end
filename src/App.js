@@ -42,7 +42,7 @@ class App extends Component{
                     <Route exact path='/' component={HomePage}/>
                     <Route path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
-                    <Route path='/mydrugs' component={MyDrugs}/>
+                    <Route path='/mydrugs' component={ props => <MyDrugs {...props} user={this.state.user}/>}/>
                 </Switch>
             </div>
         )

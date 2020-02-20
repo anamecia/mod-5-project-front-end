@@ -4,6 +4,7 @@ const signUpUrl = railsBaseUrl + 'signup'
 const validateUrl = railsBaseUrl + 'validate'
 const medicinesUrl = railsBaseUrl + 'medicines'
 const userMedicinesUrl = railsBaseUrl + 'usermedicines'
+const addMedicineUrl = railsBaseUrl + 'createnewrx'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
@@ -34,6 +35,18 @@ const post = (url,data) => {
     }).then(resp => resp.json())
 }
 
+const postWithAuth = (url, data) => {
+    return fetch(url,{
+        method:'POST',
+        headers:{
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            Authorization: localStorage.token
+        },
+        body: JSON.stringify(data)
+    }).then(resp => resp.json())
+}
+
 const signIn = (username, password) => post(signInUrl,{username, password})
 
 const signUp = (username, dateOfBirth, password, passwordConfirmation) => post(signUpUrl, {user: {username, date_of_birth: dateOfBirth, password, password_confirmation: passwordConfirmation}})
@@ -41,6 +54,8 @@ const signUp = (username, dateOfBirth, password, passwordConfirmation) => post(s
 const validate = () => getWithAuth(validateUrl)
 
 const getMedicines = () => get(medicinesUrl) 
+ 
+const postMedicine = (data) => postWithAuth(addMedicineUrl, data)
 
 const getUserMedicines = () => getWithAuth(userMedicinesUrl)
 
@@ -52,4 +67,4 @@ const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezo
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines}
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine}

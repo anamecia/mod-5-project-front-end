@@ -18,7 +18,8 @@ class SearchForm extends Component{
         if(this.state.searchTerm)
             return this.state.medicines.filter(medicine =>
                     medicine.brand_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
-                    || medicine.drug_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())) 
+                    // || medicine.drug_name.map(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+                    )   
         return []
     }
 
@@ -27,12 +28,13 @@ class SearchForm extends Component{
     }
 
     render(){
+        const { user, medicineType,addNewMedicineToUserDrugs } = this.props
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>
                 <input id='search-form'onChange={this.handleChange} type='text'/>
                 <div id='search-results'>
-                {searchedMedicines.map(medicine => <SearchResults medicine={medicine} key={medicine.id}/>)}
+                {searchedMedicines.map(medicine => <SearchResults user={user} medicine={medicine} key={medicine.id} medicineType={medicineType} addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}/>)}
                 </div>
             </div>
         )
