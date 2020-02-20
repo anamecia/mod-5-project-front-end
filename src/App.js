@@ -36,7 +36,7 @@ class App extends Component{
 
     render(){
         return(
-            <div>
+            <div id='main-container'>
                 <NavBar signOut={this.signOut}/>
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
