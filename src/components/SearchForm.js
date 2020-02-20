@@ -20,7 +20,6 @@ class SearchForm extends Component{
                     medicine.brand_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
                     || medicine.drug_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())) 
         return []
-
     }
 
     componentDidMount = () => {

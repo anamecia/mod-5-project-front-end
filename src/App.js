@@ -30,7 +30,6 @@ class App extends Component{
             .then(data => {
                 if (data.error) throw Error(data.error)
                 this.signIn(data)
-                this.props.history.push('/') //redirects the user to their page 
             }).catch(error => alert(error))  //change alert to a nicer notification    
         }
     }
@@ -40,7 +39,7 @@ class App extends Component{
             <div>
                 <NavBar signOut={this.signOut}/>
                 <Switch>
-                    <Route path='/home' component={HomePage}/>
+                    <Route exact path='/' component={HomePage}/>
                     <Route path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/mydrugs' component={MyDrugs}/>

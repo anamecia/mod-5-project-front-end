@@ -3,6 +3,7 @@ const signInUrl = railsBaseUrl + 'signin'
 const signUpUrl = railsBaseUrl + 'signup'
 const validateUrl = railsBaseUrl + 'validate'
 const medicinesUrl = railsBaseUrl + 'medicines'
+const userMedicinesUrl = railsBaseUrl + 'usermedicines'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
@@ -41,6 +42,8 @@ const validate = () => getWithAuth(validateUrl)
 
 const getMedicines = () => get(medicinesUrl) 
 
+const getUserMedicines = () => getWithAuth(userMedicinesUrl)
+
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
@@ -49,4 +52,4 @@ const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezo
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines}
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines}
