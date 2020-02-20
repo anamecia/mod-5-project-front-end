@@ -16,11 +16,13 @@ class MyDrugs extends Component {
     render(){
         return(
             <div>
-                {this.state.displaySearchForm && <SearchForm/>}
-                <p>Rescue Drugs</p>
-                <span onClick={this.handleClick}> + </span>
-                <p>Regular Drugs</p>
-                <span onClick={this.handleClick}> + </span>
+            {this.state.displaySearchForm && <SearchForm/>}
+                <div id='my-drugs-container'>
+                    <p>Rescue Drugs</p>
+                    <span onClick={this.handleClick}> + </span>
+                    <p>Regular Drugs</p>
+                    <span onClick={this.handleClick}> + </span>
+                </div>
             </div>
         )
     }  

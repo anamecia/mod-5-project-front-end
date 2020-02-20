@@ -3,7 +3,7 @@ import React from 'react'
 const SeachResults = ({ medicine }) => {
     return(
         <div>
-            <p>{medicine.brand_name} {medicine.dosage}</p>
+            <p id='search-result'>{medicine.brand_name} {medicine.dosage}</p>
         </div>
     )
 }

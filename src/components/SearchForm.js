@@ -30,9 +30,11 @@ class SearchForm extends Component{
     render(){
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
-            <div>
-                <input onChange={this.handleChange} type='text'/>
+            <div id='search-form-container'>
+                <input id='search-form'onChange={this.handleChange} type='text'/>
+                <div id='search-results'>
                 {searchedMedicines.map(medicine => <SearchResults medicine={medicine} key={medicine.id}/>)}
+                </div>
             </div>
         )
     }

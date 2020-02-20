@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
 
+import './App.css'
 import NavBar from './components/NavBar'
 import SignUpPage from './components/SignUpPage'
 import SignInPage from './components/SignInPage'
