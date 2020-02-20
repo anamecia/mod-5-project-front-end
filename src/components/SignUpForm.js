@@ -26,8 +26,8 @@ class SignUpForm extends Component {
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <>
+                <form className='sign-form' onSubmit={this.handleSubmit}>
                     <label>Username</label>
                     <input onChange={this.handleChange} type='text' name='username'/>
                     <label>Date of Birth</label>
@@ -36,9 +36,9 @@ class SignUpForm extends Component {
                     <input onChange={this.handleChange} type='password' name='password'/>
                     <label>Password Confirmation</label>
                     <input onChange={this.handleChange} type='password' name='passwordConfirmation'/>
-                    <input type='submit'/>
+                    <input class='button'type='submit'/>
                 </form>
-            </div>
+            </>
         )
     } 
 }

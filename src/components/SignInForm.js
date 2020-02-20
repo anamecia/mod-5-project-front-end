@@ -25,15 +25,15 @@ class SignInForm  extends Component {
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <>
+                <form className='sign-form'onSubmit={this.handleSubmit}>
                     <label>Username</label>
                     <input onChange={this.handleChange} type='text' name='username'/>
                     <label>Password</label>
                     <input onChange={this.handleChange} type='password' name='password'/>
-                    <input type='submit'/>
+                    <input class='button' type='submit'/>
                 </form>
-            </div>
+            </>
         )
     }
 }

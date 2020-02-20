@@ -5,7 +5,7 @@ import SignInForm from './SignInForm'
 const SignInPage = ({ signIn, history }) => {
 
     return(
-        <div>
+        <div className='sign-pages'>
             <SignInForm signIn={signIn} history={history}/>
         </div>
     )
