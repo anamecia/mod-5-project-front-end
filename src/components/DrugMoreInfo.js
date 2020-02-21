@@ -19,7 +19,7 @@ const DrugMoreInfo = ({ drug, deleteUseMedicine, updateUserMedicines}) => {
     return(
         <div>
             <button onClick={resetPackaging}>reset</button>
-            <a href={drug.medicine.leaflet} target="_blank">L</a>
+            <a rel='noopener noreferrer' href={drug.medicine.leaflet}  target="_blank">L</a>
             <button onClick={deleteUserDrug}>D</button>
         </div>
     )

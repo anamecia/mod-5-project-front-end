@@ -37,7 +37,7 @@ class MyDrugs extends Component {
 
     updateUserMedicines = (drug, updatedDrug) => {
         const index = this.state.userDrugs.indexOf(drug)
-        const drugsArray = [... this.state.userDrugs]
+        const drugsArray = [...this.state.userDrugs]
         drugsArray.splice(index,1,updatedDrug)
         this.setState({
             userDrugs: drugsArray
