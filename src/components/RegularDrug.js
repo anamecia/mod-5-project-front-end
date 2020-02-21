@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import API from '../API'
+import DrugMoreInfo from './DrugMoreInfo'
 
-const RegularDrug = ({ drug, updateUserMedicines }) => {
+class RegularDrug extends Component{
+    state={
+        displayMoreInfo:false
+    }
 
-    const updateRemainingDose = () => {
+    updateRemainingDose = () => {
+        const { drug, updateUserMedicines } = this.props
         const data = {
             remaining_doses: drug.remaining_doses - 1,
         }
@@ -12,15 +17,29 @@ const RegularDrug = ({ drug, updateUserMedicines }) => {
         .then(updatedDrug => updateUserMedicines(drug, updatedDrug))
     }
 
-    return(
-        <div className='regular-drug'>
-            <p>{drug.medicine.brand_name} {drug.medicine.dosage}</p>
-            <p>{drug.medicine.drug_name.join(',')}</p>
-            <p>Number of Remaining Doses</p>
-            <p>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</p>
-            <button onClick={updateRemainingDose}>+</button>    
-        </div>
-    )
+    toggleDisplayMoreInfo = () => {
+        this.setState({
+            displayMoreInfo: !this.state.displayMoreInfo
+        })
+    }
+
+    render(){
+        const { drug } = this.props
+        return(
+            <div className='regular-drug'>
+                <div onClick={this.toggleDisplayMoreInfo}>
+                    <p>{drug.medicine.brand_name} {drug.medicine.dosage}</p>
+                    <p>{drug.medicine.drug_name.join(', ')}</p>
+                    <p>Number of Remaining Doses</p>
+                    <p>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</p>
+                </div>
+                <button onClick={this.updateRemainingDose}>+</button> 
+                {this.state.displayMoreInfo && <DrugMoreInfo drug={drug}/>} 
+            </div>
+        )
+    }
+
+    
 } 
 
 export default RegularDrug 
