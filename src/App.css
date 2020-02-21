@@ -73,16 +73,26 @@ body{
     
 }
 
-
-
-
-
 #my-drugs-container{
     display: flex;
+    width: 85%;
     flex-direction: column;
-    align-items: center;
-     
+    align-items: center;     
 }
+
+#drugs-container{
+    display:flex;
+    width: 80%;
+    flex-direction: column;
+    
+}
+
+.drug-type{
+    font-size: 0.8em;
+}
+
+
+
 #search-form-container{
     display: flex;
     flex-direction: column;

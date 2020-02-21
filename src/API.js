@@ -5,6 +5,7 @@ const validateUrl = railsBaseUrl + 'validate'
 const medicinesUrl = railsBaseUrl + 'medicines'
 const userMedicinesUrl = railsBaseUrl + 'usermedicines'
 const addMedicineUrl = railsBaseUrl + 'createnewrx'
+const updateRxUrl = railsBaseUrl + 'updaterx/'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
@@ -47,6 +48,17 @@ const postWithAuth = (url, data) => {
     }).then(resp => resp.json())
 }
 
+const patch = (url, id, data) => {
+    return fetch(url + id, {
+        method:'PATCH',
+        headers:{
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        body:JSON.stringify(data)
+    }).then(resp => resp.json())
+}
+
 const signIn = (username, password) => post(signInUrl,{username, password})
 
 const signUp = (username, dateOfBirth, password, passwordConfirmation) => post(signUpUrl, {user: {username, date_of_birth: dateOfBirth, password, password_confirmation: passwordConfirmation}})
@@ -59,6 +71,8 @@ const postMedicine = (data) => postWithAuth(addMedicineUrl, data)
 
 const getUserMedicines = () => getWithAuth(userMedicinesUrl)
 
+const updateRx = (id, data) =>patch(updateRxUrl, id, data)
+
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
@@ -67,4 +81,4 @@ const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezo
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine}
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx}

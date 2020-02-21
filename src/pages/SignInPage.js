@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SignInForm from './SignInForm'
+import SignInForm from '../components/SignInForm'
 
 const SignInPage = ({ signIn, history }) => {
 

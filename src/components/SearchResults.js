@@ -9,7 +9,8 @@ const SeachResults = ({ medicine, medicineType, addNewMedicineToUserDrugs }) => 
         const data = {rx: { 
             medicine_id: medicine.id,
             remaining_doses: medicine.number_of_doses[0],
-            rescue: rescueValue
+            rescue: rescueValue,
+            taken_doses: []
         }}
         API.postMedicine(data).then(data => addNewMedicineToUserDrugs({...data, medicine}))
     }

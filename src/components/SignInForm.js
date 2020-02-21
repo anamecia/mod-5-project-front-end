@@ -31,7 +31,7 @@ class SignInForm  extends Component {
                     <input onChange={this.handleChange} type='text' name='username'/>
                     <label>Password</label>
                     <input onChange={this.handleChange} type='password' name='password'/>
-                    <input class='button' type='submit'/>
+                    <input className='button' type='submit'/>
                 </form>
             </>
         )
