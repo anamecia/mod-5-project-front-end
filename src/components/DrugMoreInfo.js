@@ -4,7 +4,7 @@ const DrugMoreInfo = ({ drug }) => {
 
     return(
         <div>
-            <a href={null}>L</a>
+            <a href={drug.medicine.leaflet} target="_blank">L</a>
             <button>Delete</button>
         </div>
     )
