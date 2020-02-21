@@ -24,7 +24,7 @@ class RegularDrug extends Component{
     }
 
     render(){
-        const { drug } = this.props
+        const { drug, deleteUseMedicine } = this.props
         return(
             <div className='regular-drug'>
                 <div onClick={this.toggleDisplayMoreInfo}>
@@ -34,7 +34,9 @@ class RegularDrug extends Component{
                     <p>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</p>
                 </div>
                 <button onClick={this.updateRemainingDose}>+</button> 
-                {this.state.displayMoreInfo && <DrugMoreInfo drug={drug}/>} 
+                {this.state.displayMoreInfo && <DrugMoreInfo 
+                    drug={drug}
+                    deleteUseMedicine={deleteUseMedicine}/>} 
             </div>
         )
     }

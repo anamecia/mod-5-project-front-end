@@ -44,6 +44,12 @@ class MyDrugs extends Component {
         })
     }
 
+    deleteUseMedicine = (drugToRemove) => {
+        this.setState({
+            userDrugs: [...this.state.userDrugs].filter( drug => drug.id !== drugToRemove.id)
+        })
+    }
+
     render(){
         const { user } = this.props
         const { medicineType } = this.state
@@ -56,12 +62,14 @@ class MyDrugs extends Component {
                     <p className='drug-type'>Rescue Drugs</p>
                     <RescueDrugs 
                         userRescueDrugs={this.userRescueDrugs()}
-                        updateUserMedicines={this.updateUserMedicines}/>
+                        updateUserMedicines={this.updateUserMedicines}
+                        deleteUseMedicine={this.deleteUseMedicine}/>
                     <span onClick={() => this.handleClick({value:'rescue'})}> + </span>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
-                        updateUserMedicines={this.updateUserMedicines}/>
+                        updateUserMedicines={this.updateUserMedicines}
+                        deleteUseMedicine={this.deleteUseMedicine}/>
                     <span onClick={() => this.handleClick({value:'regular'})}> + </span>
                 </div>
             </div>
