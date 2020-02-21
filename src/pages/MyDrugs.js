@@ -62,14 +62,14 @@ class MyDrugs extends Component {
                     <p className='drug-type'>Rescue Drugs</p>
                     <RescueDrugs 
                         userRescueDrugs={this.userRescueDrugs()}
-                        updateUserMedicines={this.updateUserMedicines}
-                        deleteUseMedicine={this.deleteUseMedicine}/>
+                        deleteUseMedicine={this.deleteUseMedicine}
+                        updateUserMedicines={this.updateUserMedicines}/>
                     <span onClick={() => this.handleClick({value:'rescue'})}> + </span>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
-                        updateUserMedicines={this.updateUserMedicines}
-                        deleteUseMedicine={this.deleteUseMedicine}/>
+                        deleteUseMedicine={this.deleteUseMedicine}
+                        updateUserMedicines={this.updateUserMedicines}/>
                     <span onClick={() => this.handleClick({value:'regular'})}> + </span>
                 </div>
             </div>

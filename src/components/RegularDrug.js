@@ -24,7 +24,7 @@ class RegularDrug extends Component{
     }
 
     render(){
-        const { drug, deleteUseMedicine } = this.props
+        const { drug, deleteUseMedicine, updateUserMedicines } = this.props
         return(
             <div className='regular-drug'>
                 <div onClick={this.toggleDisplayMoreInfo}>
@@ -36,7 +36,8 @@ class RegularDrug extends Component{
                 <button onClick={this.updateRemainingDose}>+</button> 
                 {this.state.displayMoreInfo && <DrugMoreInfo 
                     drug={drug}
-                    deleteUseMedicine={deleteUseMedicine}/>} 
+                    deleteUseMedicine={deleteUseMedicine}
+                    updateUserMedicines={updateUserMedicines}/>} 
             </div>
         )
     }

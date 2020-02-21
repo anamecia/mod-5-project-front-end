@@ -8,8 +8,8 @@ const RegularDrugs = ({ userRegularDrugs, updateUserMedicines, deleteUseMedicine
            {userRegularDrugs.map(drug => <RegularDrug 
                 drug={drug} 
                 key={drug.id}
-                updateUserMedicines={updateUserMedicines}
-                deleteUseMedicine={deleteUseMedicine}/>)}
+                deleteUseMedicine={deleteUseMedicine}
+                updateUserMedicines={updateUserMedicines}/>)}
         </div>
     )
 }
