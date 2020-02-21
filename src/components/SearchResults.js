@@ -1,7 +1,7 @@
 import React from 'react'
 import API from '../API'
 
-const SeachResults = ({ medicine, medicineType, addNewMedicineToUserDrugs }) => {
+const SeachResults = ({medicine, medicineType, addNewMedicineToUserDrugs }) => {
 
     const addMedicine = () => {
         const rescueValue = medicineType === 'rescue' ? true : false

@@ -14,12 +14,19 @@ class SearchForm extends Component{
         })
     }
 
+    
+
     searchMedicinesByBrandOrDrugName = () => {
-        if(this.state.searchTerm)
-            return this.state.medicines.filter(medicine =>
-                    medicine.brand_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
-                    // || medicine.drug_name.map(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-                    )   
+        if(this.state.searchTerm){
+            const filteredMedicinesBySearchTerm = () => this.state.medicines.filter(medicine =>
+                medicine.brand_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
+                // || medicine.drug_name.map(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+                )  
+            const filteredUserDrugs= () => this.props.userDrugs.map(drug => `${drug.medicine.brand_name} ${drug.medicine.dosage}`)
+           
+            return filteredMedicinesBySearchTerm().filter( medicine => !filteredUserDrugs().includes(`${medicine.brand_name} ${medicine.dosage}`))
+        }
+
         return []
     }
 
@@ -34,7 +41,12 @@ class SearchForm extends Component{
             <div id='search-form-container'>
                 <input id='search-form'onChange={this.handleChange} type='text'/>
                 <div id='search-results'>
-                {searchedMedicines.map(medicine => <SearchResults user={user} medicine={medicine} key={medicine.id} medicineType={medicineType} addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}/>)}
+                {searchedMedicines.map(medicine => <SearchResults 
+                    user={user} 
+                    medicine={medicine} 
+                    key={medicine.id} 
+                    medicineType={medicineType} 
+                    addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}/>)}
                 </div>
             </div>
         )

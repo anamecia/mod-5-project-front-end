@@ -52,11 +52,15 @@ class MyDrugs extends Component {
 
     render(){
         const { user } = this.props
-        const { medicineType } = this.state
+        const { userDrugs, medicineType } = this.state
         return(
             <div id='my-drugs-container'>
                 <div>
-                    {this.state.displaySearchForm && <SearchForm user={user} medicineType={medicineType} addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
+                    {this.state.displaySearchForm && <SearchForm 
+                        user={user} 
+                        medicineType={medicineType} 
+                        userDrugs={userDrugs}
+                        addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
                 </div>
                 <div id='drugs-container'>
                     <p className='drug-type'>Rescue Drugs</p>
