@@ -15,6 +15,7 @@ const AtcResult = ({score}) => {
     return(
         <div>
             <h1>{showResult().result}</h1>
+            <p>Score:{score}</p>
             <p>{showResult().text}</p>
         </div>
     )
