@@ -1,5 +1,4 @@
 import React from 'react'
-import AnswerButton from './AnswerButton'
 
 const Question = ({ test, updateQuestionNumberAndScore }) => {
 

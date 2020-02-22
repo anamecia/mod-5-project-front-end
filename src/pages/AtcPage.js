@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+import data from '../AtcQuestions.js'
+
 import Question from '../components/Question'
-import questions from '../AtcQuestions.js'
+import API from '../API'
+import AtcResult from '../components/AtcResult'
+
 
 class AtcPage extends Component{
-    state={
+    state = {
         questionNumber:0,
         score:0
     }
@@ -13,6 +17,17 @@ class AtcPage extends Component{
             questionNumber: this.state.questionNumber += 1,
             score: this.state.score += parseInt(e.target.value)
         })
+
+        if (this.state.questionNumber === 5){
+            this.saveUserAtcScore()
+        }
+    }
+
+    saveUserAtcScore = () => {
+        const data = {asthma_control_test:
+            {score: this.state.score}
+        }
+        API.createAtc(data)
     }
 
 
@@ -20,11 +35,12 @@ class AtcPage extends Component{
         const { questionNumber } = this.state 
         return(
             <div>
-                {questionNumber===0 && <Question test={questions[0]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===1 && <Question test={questions[1]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===2 && <Question test={questions[2]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===3 && <Question test={questions[3]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===4 && <Question test={questions[4]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===0 && <Question test={data.questions[0]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===1 && <Question test={data.questions[1]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===2 && <Question test={data.questions[2]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===3 && <Question test={data.questions[3]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===4 && <Question test={data.questions[4]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===5 && <AtcResult score={this.state.score}/>}
             </div>
         )
     }

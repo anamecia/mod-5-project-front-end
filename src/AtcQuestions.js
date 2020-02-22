@@ -57,7 +57,7 @@ const questions =[
             [
                 {
                     text:'4 or more times a week',
-                    values:1 
+                    value:1 
                 },
                 {
                     text:'2-3 nights a week',
@@ -131,4 +131,19 @@ const questions =[
     }
 ]
 
-    export default questions
+const results = [
+    {
+        result: 'WELL DONE',
+        text: 'Your asthma appears to have been UNDER CONTROL over the last 4 weeks. However, if you are experiencing any problems with your asthma, you should see your doctor or nurse.'
+    },
+    {
+        result: 'ON TARGET',
+        text: 'Your asthma appears to have been REASONABLY WELL CONTROLLED during the past 4 weeks. Your doctor or nurse can recommend an asthma action plan to help improve your asthma control.'
+    },
+    {
+        result: 'OFF TARGET',
+        text: 'Your asthma may NOT HAVE BEEN CONTROLLED during the past 4 weeks. Your doctor or nurse can recommend an asthma action plan to help improve your asthma control.'
+    }
+]
+
+export default { questions, results }
