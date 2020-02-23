@@ -3,18 +3,23 @@ import React from 'react'
 const Question = ({ test, updateQuestionNumberAndScore }) => {
 
         return(
-            <div>
-               <p>{test.question}</p> 
-               {test.answers.map(answer => 
-               <button 
-                    onClick={updateQuestionNumberAndScore}
-                    key={answer.value} 
-                    value={answer.value}
-                    >
-                    {answer.text}
-                </button>
-            )}
-            </div>
+            <>
+                <div id='question-container'>
+                    <p id='question'>{test.question}</p> 
+                </div>
+                <div id='options'>
+                {test.answers.map(answer => 
+                    <button 
+                            onClick={updateQuestionNumberAndScore}
+                            key={answer.value} 
+                            value={answer.value}
+                            className='option-btn'
+                            >
+                            {answer.text}
+                        </button>
+                    )}
+                </div>
+            </>
         )
 }
 

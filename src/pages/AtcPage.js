@@ -34,7 +34,7 @@ class AtcPage extends Component{
     render(){
         const { questionNumber } = this.state 
         return(
-            <div>
+            <div id='atc-container'>
                 {questionNumber===0 && <Question test={data.questions[0]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
                 {questionNumber===1 && <Question test={data.questions[1]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
                 {questionNumber===2 && <Question test={data.questions[2]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}

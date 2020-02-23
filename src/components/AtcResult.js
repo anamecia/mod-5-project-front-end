@@ -13,10 +13,10 @@ const AtcResult = ({score}) => {
     } 
 
     return(
-        <div>
-            <h1>{showResult().result}</h1>
-            <p>Score:{score}</p>
-            <p>{showResult().text}</p>
+        <div id='atc-result-container'>
+            <h1 className='result-title'>{showResult().result}</h1>
+            <p className='result'>Score: {score}</p>
+            <p className='result'>{showResult().text}</p>
         </div>
     )
 }

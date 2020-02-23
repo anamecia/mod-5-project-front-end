@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const NarBar = ({ signOut }) => {
     return(
         <div id='nav-bar'>
-            <p id='title'>Open Air</p>
-            <p id='hamburger'> menu</p>
-            <Link to='/' onClick={signOut}>Sign Out</Link>
+            <Link to='/home' id='title'>Open Air</Link>
+            <i className="fa fa-bars"></i>
+            {/* <Link to='/' onClick={signOut}>Sign Out</Link> */}
         </div>
     )
 }

@@ -28,10 +28,10 @@ class SignInForm  extends Component {
             <>
                 <form className='sign-form'onSubmit={this.handleSubmit}>
                     <label>Username</label>
-                    <input onChange={this.handleChange} type='text' name='username'/>
+                    <input className='input'onChange={this.handleChange} type='text' name='username'/>
                     <label>Password</label>
-                    <input onChange={this.handleChange} type='password' name='password'/>
-                    <input className='button' type='submit'/>
+                    <input className='input' onChange={this.handleChange} type='password' name='password'/>
+                    <input className='button' type='submit' value='Sign In'/>
                 </form>
             </>
         )

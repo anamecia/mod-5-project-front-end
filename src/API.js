@@ -9,6 +9,7 @@ const updateRxUrl = railsBaseUrl + 'updaterx/'
 const deleteRxUrl = railsBaseUrl + 'deleterx/'
 const createAtcUrl = railsBaseUrl + 'createnewatcscore'
 const userNoteUrl = railsBaseUrl + 'usernotes'
+const createNoteUrl = railsBaseUrl + 'createnewnote'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
@@ -88,6 +89,8 @@ const createAtc = (data) => postWithAuth(createAtcUrl, data)
 
 const getUserNotes = () => getWithAuth(userNoteUrl)
 
+const createNote = (data) => postWithAuth(createNoteUrl, data)
+
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
@@ -96,4 +99,4 @@ const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezo
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes}
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes, createNote}

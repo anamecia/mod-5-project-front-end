@@ -29,14 +29,14 @@ class SignUpForm extends Component {
             <>
                 <form className='sign-form' onSubmit={this.handleSubmit}>
                     <label>Username</label>
-                    <input onChange={this.handleChange} type='text' name='username'/>
+                    <input className='input' onChange={this.handleChange} type='text' name='username'/>
                     <label>Date of Birth</label>
-                    <input onChange={this.handleChange} type='date' name='dateOfBirth'/>
+                    <input className='input' onChange={this.handleChange} type='date' name='dateOfBirth'/>
                     <label>Password</label>
-                    <input onChange={this.handleChange} type='password' name='password'/>
+                    <input className='input' onChange={this.handleChange} type='password' name='password'/>
                     <label>Password Confirmation</label>
-                    <input onChange={this.handleChange} type='password' name='passwordConfirmation'/>
-                    <input class='button'type='submit'/>
+                    <input className='input' onChange={this.handleChange} type='password' name='passwordConfirmation'/>
+                    <input class='button'type='submit'value='Sign Up'/>
                 </form>
             </>
         )

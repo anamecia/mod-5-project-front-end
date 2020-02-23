@@ -4,9 +4,9 @@ var moment = require('moment')
 class Note extends Component{
 
     render(){
-        const { note } = this.props
+        const { note, selectNote } = this.props
         return (
-            <div>
+            <div onClick={()=> selectNote(note)}>
                 <p>{moment(note.created_at).format("Do MMM YYYY")}</p>
                 {note.title && <p>{note.title}</p>}
                 <p>{note.content}</p>
