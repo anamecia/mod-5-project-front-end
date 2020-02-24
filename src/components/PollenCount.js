@@ -14,11 +14,22 @@ class PollenCount extends Component{
 
     render(){
         return(
-            <div>
-                <p>Grass</p>
-                <p>Tree</p>
-                <p>Gramiales</p>
-                <p>Ragweed</p>
+            <div className='pollen-count-container'>
+                <p>Pollen Count</p>
+                <div className='pollen-count-subcontainer'>
+                    <div>
+                        <p>Grass</p>
+                    </div>
+                    <div>
+                        <p>Tree</p>
+                    </div>
+                    <div>
+                        <p>Gramiales</p>
+                    </div>
+                    <div>
+                        <p>Ragweed</p>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -39,15 +39,15 @@ class Notes extends Component{
 
     render(){
         return(
-            <>
+            <div className='notes-container'>
                 {this.state.showAddForm  && <NoteForm addNote={this.addNote} toggleShowAddForm={this.toggleShowAddForm}/>}
-                {this.state.selectedNote  && <Note note={this.state.selectedNote}/>}
+                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote}/>}
                 {!this.state.showAddForm && !this.state.selectedNote &&
-                <div>
-                    <button onClick={this.toggleShowAddForm}> + </button>
-                    {this.state.notes.map(note => <Note note={note} key={note.id} selectNote={this.selectNote}/>)}
-                </div>}
-            </>
+                <>
+                <span className='add-button' onClick={this.toggleShowAddForm}> + </span>
+                {this.state.notes.map(note => <Note note={note} key={note.id} selectNote={this.selectNote}/>)}
+                </>}
+            </div>
         )
     }
 }

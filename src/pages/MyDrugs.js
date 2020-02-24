@@ -55,7 +55,7 @@ class MyDrugs extends Component {
         const { userDrugs, medicineType } = this.state
         return(
             <div id='my-drugs-container'>
-                <div>
+                <div id='search-form-container'>
                     {medicineType && <SearchForm 
                         user={user}
                         medicineType={medicineType} 
@@ -69,13 +69,13 @@ class MyDrugs extends Component {
                         userRescueDrugs={this.userRescueDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}/>
-                    <span onClick={() => this.updateMedicineType({value:'rescue'})}> + </span>
+                    <span className='add-button' onClick={() => this.updateMedicineType({value:'rescue'})}> + </span>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}/>
-                    <span onClick={() => this.updateMedicineType({value:'regular'})}> + </span>
+                    <span className='add-button' onClick={() => this.updateMedicineType({value:'regular'})}> + </span>
                 </div>
             </div>
         )

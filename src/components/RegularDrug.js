@@ -49,24 +49,27 @@ class RegularDrug extends Component{
     render(){
         const { drug, deleteUseMedicine } = this.props
         return(
-            <div className='regular-drug'>
-                <div onClick={this.toggleDisplayMoreInfo}>
-                    <p>{drug.medicine.brand_name} {drug.medicine.dosage}</p>
+            
+            <div className='drug-container'>
+                <div className='drug-info' onClick={this.toggleDisplayMoreInfo}>
+                    <h1>{drug.medicine.brand_name} {drug.medicine.dosage}</h1>
                     <p>{drug.medicine.drug_name.join(', ')}</p>
-                    <p>Number of Remaining Doses</p>
-                    <p>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</p>
+                    <h3>Number of Remaining Doses</h3>
+                    <h3>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</h3>
                 </div>
-                <button onClick={this.updateRemainingDose}>+</button> 
+                <div className='more-info'>
                 {this.state.displayMoreInfo && <DrugMoreInfo 
                     drug={drug}
                     deleteUseMedicine={deleteUseMedicine}
                     resetPackaging ={this.resetPackaging}/>}
-                {this.state.showDoseModal && <DoseModal closeModal={this.closeModal} resetPackaging ={this.resetPackaging}/>}
-            </div>
+                    {this.state.showDoseModal && <DoseModal 
+                        closeModal={this.closeModal} 
+                        resetPackaging ={this.resetPackaging}/>}
+                </div>
+                <button className='dose-button' onClick={this.updateRemainingDose}>+</button> 
+            </div>  
         )
     }
-
-    
 } 
 
 export default RegularDrug 

@@ -7,12 +7,12 @@ import PollenCount from '../components/PollenCount'
 const Forecast = ({latitude, longitude}) => {
 
     return(
-        <div>
+        <>
             <Weather latitude={latitude} longitude={longitude}/> 
             <AirQuality latitude={latitude} longitude={longitude}/>
             <AirPollutants latitude={latitude} longitude={longitude}/>
             <PollenCount latitude={latitude} longitude={longitude}/>
-        </div>
+        </>
     )
 }
 

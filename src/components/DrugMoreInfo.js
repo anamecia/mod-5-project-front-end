@@ -9,11 +9,13 @@ const DrugMoreInfo = ({ drug, deleteUseMedicine, resetPackaging}) => {
     }
 
     return(
-        <div>
+        <>
             <button onClick={resetPackaging}>reset</button>
-            <a rel='noopener noreferrer' href={drug.medicine.leaflet}  target="_blank">L</a>
-            <button onClick={deleteUserDrug}>D</button>
-        </div>
+            <div>
+                <a rel='noopener noreferrer' href={drug.medicine.leaflet} target="_blank">L</a>
+                <button onClick={deleteUserDrug}>D</button>
+            </div>
+        </>
     )
 }
 

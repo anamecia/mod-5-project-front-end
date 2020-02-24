@@ -35,7 +35,7 @@ class HomePage extends Component{
     render(){
         const {latitude, longitude} = this.state
         return(
-            <div>
+            <div id='home-container'>
                 {latitude && <Forecast latitude={latitude} longitude={longitude}/>}  
             </div>
         )

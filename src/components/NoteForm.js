@@ -28,7 +28,7 @@ class NoteForm extends Component{
 
     render(){
         return(
-            <div>
+            <div className='notes-form-container'>
                 <input onChange={this.handleChange} type='text' placeholder='Title' name='title'/>
                 <textarea onChange={this.handleChange} name='content'/>
                 <button onClick={this.handleClick}>Save</button>
