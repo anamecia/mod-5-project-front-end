@@ -30,7 +30,6 @@ class AtcPage extends Component{
         API.createAtc(data)
     }
 
-
     render(){
         const { questionNumber } = this.state 
         return(

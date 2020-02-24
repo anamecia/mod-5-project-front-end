@@ -1,19 +1,11 @@
 import React from 'react'
 import API from '../API'
 
-const DrugMoreInfo = ({ drug, deleteUseMedicine, updateUserMedicines}) => {
+const DrugMoreInfo = ({ drug, deleteUseMedicine, resetPackaging}) => {
 
     const deleteUserDrug = () => {
         API.deleteRx(drug.id)
         .then(() => deleteUseMedicine(drug))
-    }
-
-    const resetPackaging = () => {
-        const data = {
-            remaining_doses: drug.medicine.number_of_doses[0]
-        }
-        API.updateRx(drug.id, data)
-        .then(updatedDrug => updateUserMedicines(drug, updatedDrug))
     }
 
     return(
