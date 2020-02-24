@@ -14,7 +14,11 @@ class SearchForm extends Component{
         })
     }
 
-    
+    resetSeachForm = () =>{
+        this.setState({
+            searchTerm: ''
+        })
+    }
 
     searchMedicinesByBrandOrDrugName = () => {
         if(this.state.searchTerm){
@@ -39,10 +43,11 @@ class SearchForm extends Component{
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>
-                <input id='search-form'onChange={this.handleChange} type='text'/>
+                <input id='search-form'onChange={this.handleChange} value={this.state.searchTerm} type='text'/>
                 <div id='search-results'>
                 {searchedMedicines.map(medicine => <SearchResults 
-                    user={user} 
+                    user={user}
+                    resetSeachForm={this.resetSeachForm} 
                     medicine={medicine} 
                     key={medicine.id} 
                     medicineType={medicineType} 
