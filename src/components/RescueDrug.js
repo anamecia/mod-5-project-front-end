@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import API from '../API'
 import DrugMoreInfo from './DrugMoreInfo'
+var moment = require('moment')
+
+
 
 class RescueDrug extends Component{
 
@@ -12,6 +15,7 @@ class RescueDrug extends Component{
         const { drug, updateUserMedicines } = this.props
         const data = {
             remaining_doses: drug.remaining_doses - 1,
+            date: moment().format("Do MMM YYYY")
         }
 
         API.updateRx(drug.id,data)
