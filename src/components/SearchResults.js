@@ -1,7 +1,7 @@
 import React from 'react'
 import API from '../API'
 
-const SeachResults = ({medicine, medicineType, addNewMedicineToUserDrugs, resetSeachForm }) => {
+const SeachResults = ({medicine, medicineType, addNewMedicineToUserDrugs, handleClick }) => {
 
     const addMedicine = () => {
         const rescueValue = medicineType === 'rescue' ? true : false
@@ -14,7 +14,7 @@ const SeachResults = ({medicine, medicineType, addNewMedicineToUserDrugs, resetS
         }}
         API.postMedicine(data)
         .then(data => addNewMedicineToUserDrugs({...data, medicine}))
-        .then(() => resetSeachForm())
+        .then(() => handleClick({value: medicineType}))
 
     }
 

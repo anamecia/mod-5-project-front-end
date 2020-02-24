@@ -14,12 +14,6 @@ class SearchForm extends Component{
         })
     }
 
-    resetSeachForm = () =>{
-        this.setState({
-            searchTerm: ''
-        })
-    }
-
     searchMedicinesByBrandOrDrugName = () => {
         if(this.state.searchTerm){
             const filteredMedicinesBySearchTerm = () => this.state.medicines.filter(medicine =>
@@ -39,7 +33,7 @@ class SearchForm extends Component{
     }
 
     render(){
-        const { user, medicineType,addNewMedicineToUserDrugs } = this.props
+        const { user, medicineType,addNewMedicineToUserDrugs, updateMedicineType } = this.props
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>
@@ -47,8 +41,8 @@ class SearchForm extends Component{
                 <div id='search-results'>
                 {searchedMedicines.map(medicine => <SearchResults 
                     user={user}
-                    resetSeachForm={this.resetSeachForm} 
                     medicine={medicine} 
+                    updateMedicineType ={updateMedicineType}
                     key={medicine.id} 
                     medicineType={medicineType} 
                     addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}/>)}

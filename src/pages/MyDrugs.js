@@ -7,16 +7,16 @@ import API from '../API'
 class MyDrugs extends Component {
 
     state = {
-        displaySearchForm: false,
         userDrugs:[],
         medicineType: ''
     }
 
-    handleClick = (type) => {
-        this.setState({
-            displaySearchForm: !this.state.displaySearchForm,
-            medicineType: type.value
-        })
+    updateMedicineType = (type) => {
+
+        if (type.value === this.state.medicineType)
+            this.setState({ medicineType: ''})
+        else
+            this.setState({ medicineType: type.value })
     }
 
     componentDidMount = () => {
@@ -56,9 +56,10 @@ class MyDrugs extends Component {
         return(
             <div id='my-drugs-container'>
                 <div>
-                    {this.state.displaySearchForm && <SearchForm 
-                        user={user} 
+                    {medicineType && <SearchForm 
+                        user={user}
                         medicineType={medicineType} 
+                        updateMedicineType={this.updateMedicineType}
                         userDrugs={userDrugs}
                         addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
                 </div>
@@ -68,13 +69,13 @@ class MyDrugs extends Component {
                         userRescueDrugs={this.userRescueDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}/>
-                    <span onClick={() => this.handleClick({value:'rescue'})}> + </span>
+                    <span onClick={() => this.updateMedicineType({value:'rescue'})}> + </span>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}/>
-                    <span onClick={() => this.handleClick({value:'regular'})}> + </span>
+                    <span onClick={() => this.updateMedicineType({value:'regular'})}> + </span>
                 </div>
             </div>
         )
