@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'
 import MyDrugs from './pages/MyDrugs'
 import AtcPage from './pages/AtcPage'
 import Notes from './pages/Notes'
+import Report from './pages/ReportPage'
 
 class App extends Component{
     state = {
@@ -47,6 +48,7 @@ class App extends Component{
                     <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={this.state.user}/>}/>
                     <Route path='/atc' component={AtcPage}/>
                     <Route path='/notes' component={Notes}/> 
+                    <Route path='/report' component={Report}/>
                 </Switch>
             </div>
         )
