@@ -480,7 +480,7 @@ body{
     background-color: white;
     align-self: center;
     margin-bottom: 4%;
-    z-index: 200;
+    /* z-index: 200; */
 }
 
 .modal p{

@@ -41,7 +41,7 @@ class Notes extends Component{
         return(
             <div className='notes-container'>
                 {this.state.showAddForm  && <NoteForm addNote={this.addNote} toggleShowAddForm={this.toggleShowAddForm}/>}
-                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote}/>}
+                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote} selectNote={this.selectNote}/>}
                 {!this.state.showAddForm && !this.state.selectedNote &&
                 <>
                 <span className='add-button' onClick={this.toggleShowAddForm}> + </span>
