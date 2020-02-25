@@ -150,6 +150,17 @@ body{
   text-align: center;
 }
 
+.span-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.air-pollutants-span{
+    background-color: grey;
+    border-radius: 40%;
+}
+
 .pollen-count-container {
     display: flex;
     flex-direction: column;

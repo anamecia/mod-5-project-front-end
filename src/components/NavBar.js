@@ -20,7 +20,7 @@ class NarBar extends Component {
             <div id='nav-bar-container'>
                 <div id='nav-bar'>
                     <Link to='/home' id='title'>Open Air</Link>
-                    {user && <i className="fa fa-bars" onClick={this.toggleShowMenu}></i>}
+                    <i className="fa fa-bars" onClick={this.toggleShowMenu}></i>
                 </div>
                 {/* {this.state.showMenu && <NavBarMenu signout={this.props.signOut} toggleShowMenu={this.toggleShowMenu}/>} */}
             </div>

@@ -27,7 +27,6 @@ class App extends Component{
     signOut = () =>{
         this.setState({user: null})
         localStorage.removeItem('token')
-        // history.push('/')
     }
 
     componentDidMount = () => {
@@ -55,7 +54,6 @@ class App extends Component{
                     <Route path='/notes' component={Notes}/> 
                     <Route path='/report' component={Report}/>
                 </Switch>
-                {/* <Footer/> */}
             </div>
         )
     } 
