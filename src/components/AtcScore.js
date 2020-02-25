@@ -7,7 +7,7 @@ const AtcScore = ( { atc }) => {
     return(
         <div className='score-container'>
             <span>{moment(atc.created_at).format("Do MMM YYYY")}</span>
-            <span>Score:{atc.score}</span >
+            <span>Score: {atc.score}</span >
         </div>
     )
 
