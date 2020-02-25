@@ -14,8 +14,6 @@ class  Charts extends Component {
         .then (userRescueMedicines => this.setState({rescueMedicines: userRescueMedicines}))
     }
 
-    
-
     render(){
         return(
             <div>

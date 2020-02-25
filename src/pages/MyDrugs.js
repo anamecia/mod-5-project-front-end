@@ -51,7 +51,7 @@ class MyDrugs extends Component {
     }
 
     render(){
-        const { user } = this.props
+        const { user, toggleShowModal } = this.props
         const { userDrugs, medicineType } = this.state
         return(
             <div id='my-drugs-container'>
@@ -68,13 +68,15 @@ class MyDrugs extends Component {
                     <RescueDrugs 
                         userRescueDrugs={this.userRescueDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
-                        updateUserMedicines={this.updateUserMedicines}/>
+                        updateUserMedicines={this.updateUserMedicines}
+                        toggleShowModal={toggleShowModal}/>
                     <span className='add-button' onClick={() => this.updateMedicineType({value:'rescue'})}> + </span>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
-                        updateUserMedicines={this.updateUserMedicines}/>
+                        updateUserMedicines={this.updateUserMedicines}
+                        toggleShowModal={toggleShowModal}/>
                     <span className='add-button' onClick={() => this.updateMedicineType({value:'regular'})}> + </span>
                 </div>
             </div>

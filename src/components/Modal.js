@@ -9,8 +9,8 @@ const Modal = ({ closeModal, resetPackaging }) => {
 
     return (
         <div className='modal'>
-            <p>You dont't have any remaining doses?</p>
-            <p>Do you want to reset the packaging now?</p>
+            <p>You dont't have any remaining doses.</p>
+            <p>Would you like to reset the packaging now?</p>
             <div className='modal-buttons'>
                 <button onClick={newPackaging}>Yes</button>
                 <button onClick={closeModal}>No</button>

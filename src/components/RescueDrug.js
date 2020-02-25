@@ -10,7 +10,6 @@ class RescueDrug extends Component{
 
     state={
         displayMoreInfo:false,
-        showDoseModal: false
     }
 
     updateRemainingDose = () => {

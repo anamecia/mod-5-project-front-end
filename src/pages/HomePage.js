@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Forecast from '../containers/Forecast'
-import Footer from '../components/Footeradd'
+import Footer from '../components/Footer'
 
 
 class HomePage extends Component{

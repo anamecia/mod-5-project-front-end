@@ -5,11 +5,11 @@ import Inhaler from '../images/asthma.svg'
 const Footer = () => {
     return(
         <div id='footer'>
-            <Link to='/mydrugs'><img className='footer-icon' src={Inhaler}/></Link>
-            <Link to='/atc'>Atc</Link>
-            <Link to='/home'>Home</Link>
+            <Link to='/mydrugs'>My Drugs</Link>
+            <Link to='/atc'>ATC</Link>
+            {/* <Link to='/home'>Home</Link> */}
             <Link to='/notes'>Notes</Link>
-            <Link to='/reports'>report</Link>
+            <Link to='/report'>Report</Link>
         </div>
     )
 }
