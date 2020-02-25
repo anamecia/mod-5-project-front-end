@@ -70,7 +70,7 @@ class Weather extends Component {
                     </div>
                     <div className='weather-details'>
                         {weatherInfo && <h3>{weatherInfo.weather_text}</h3>}
-                        {weatherInfo && <h1>{Math.floor(weatherInfo.temperature.value)}C</h1>}
+                        {weatherInfo && <h1>{Math.floor(weatherInfo.temperature.value)}°C</h1>}
                     </div>
                 </div>
                 <div className='weather-subcontainer'>

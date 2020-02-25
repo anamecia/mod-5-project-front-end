@@ -3,9 +3,11 @@ import { Route, Switch, withRouter} from 'react-router-dom'
 
 import './App.css'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import API from './API'
+import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import MyDrugs from './pages/MyDrugs'
 import AtcPage from './pages/AtcPage'
@@ -42,7 +44,8 @@ class App extends Component{
             <div id='main-container'>
                 <NavBar signOut={this.signOut}/>
                 <Switch>
-                    <Route exact path='/home' component={HomePage}/>
+                    <Route exact path='/' component={LandingPage}/>
+                    <Route path='/home' component={HomePage}/>
                     <Route path='/signup' render={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' render={props => <SignInPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={this.state.user}/>}/>
@@ -50,6 +53,7 @@ class App extends Component{
                     <Route path='/notes' component={Notes}/> 
                     <Route path='/report' component={Report}/>
                 </Switch>
+                {/* <Footer/> */}
             </div>
         )
     } 
