@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import API from '../API'
 import DrugMoreInfo from './DrugMoreInfo'
-import DoseModal from './DoseModal'
+import Modal from './Modal'
 var moment = require('moment')
 
 
@@ -63,7 +63,7 @@ class RescueDrug extends Component{
                         drug={drug}
                         deleteUseMedicine={deleteUseMedicine}
                         resetPackaging ={this.resetPackaging}/>}
-                    {this.state.showDoseModal && <DoseModal 
+                    {this.state.showDoseModal && <Modal 
                         closeModal={this.closeModal} 
                         resetPackaging ={this.resetPackaging}/>}
                 </div>

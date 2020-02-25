@@ -27,6 +27,7 @@ class App extends Component{
     signOut = () =>{
         this.setState({user: null})
         localStorage.removeItem('token')
+        // history.push('/')
     }
 
     componentDidMount = () => {
@@ -40,15 +41,16 @@ class App extends Component{
     }
 
     render(){
+        const { user } = this.props
         return(
             <div id='main-container'>
-                <NavBar signOut={this.signOut}/>
+                <NavBar signOut={this.signOut} user={user}/>
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
                     <Route path='/home' component={HomePage}/>
                     <Route path='/signup' render={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' render={props => <SignInPage {...props} signIn={this.signIn}/>}/>
-                    <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={this.state.user}/>}/>
+                    <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={user}/>}/>
                     <Route path='/atc' component={AtcPage}/>
                     <Route path='/notes' component={Notes}/> 
                     <Route path='/report' component={Report}/>
