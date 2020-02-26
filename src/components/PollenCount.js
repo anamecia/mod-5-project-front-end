@@ -1,10 +1,89 @@
 import React, { Component } from 'react'
-import API from '../API'
+// import API from '../API'
 
 class PollenCount extends Component{
 
     state = {
-        pollenCountInfo: null
+        // pollenCountInfo: null
+        pollenCountInfo: {
+            "date": "2020-02-25",
+            "index_id": "bpi",
+            "index_display_name": "BreezoMeter Pollen Index",
+            "types": {
+                "grass": {
+                    "display_name": "Grass",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                },
+                "tree": {
+                    "display_name": "Tree",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                },
+                "weed": {
+                    "display_name": "Weed",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                }
+            },
+            "plants": {
+                "olive": {
+                    "display_name": "Olive",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                },
+                "graminales": {
+                    "display_name": "Graminales",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                },
+                "ragweed": {
+                    "display_name": "Ragweed",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                },
+                "birch": {
+                    "display_name": "Birch",
+                    "in_season": false,
+                    "data_available": false,
+                    "index": {
+                        "value": null,
+                        "category": null,
+                        "color": null
+                    }
+                }
+            }
+        }
     }
 
     componentDidMount = () => {
