@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-// import API from '../API'
+import API from '../API'
 
 class AirQuality extends Component{
 
     state = {
-        airQualityInfo: {
-            "display_name": "BreezoMeter AQI",
-            "aqi": 76,
-            "aqi_display": "76",
-            "color": "#69C534",
-            "category": "Good air quality",
-            "dominant_pollutant": "o3"
-        }
+        // airQualityInfo: {
+        //     "display_name": "BreezoMeter AQI",
+        //     "aqi": 76,
+        //     "aqi_display": "76",
+        //     "color": "#69C534",
+        //     "category": "Good air quality",
+        //     "dominant_pollutant": "o3"
+        // }
     }
 
     componentDidMount = () => {
-        // API.getAirQuality(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))
+        API.getAirQuality(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))
         // add catch to handle errors
     }
 
@@ -39,7 +39,6 @@ class AirQuality extends Component{
     render(){
         const { airQualityInfo } = this.state
         return(
-            
             <div className='air-quality-container'>
                 <p>Air Quality</p>
                 {airQualityInfo && <h1>{this.checkAirQuality()}</h1>}

@@ -30,6 +30,11 @@ class AtcPage extends Component{
         API.createAtc(data)
     }
 
+    // componentDidMount = () => {
+    //     if(this.props.user === null) 
+    //         this.props.history.push('/')
+    // }
+
     render(){
         const { questionNumber } = this.state 
         return(

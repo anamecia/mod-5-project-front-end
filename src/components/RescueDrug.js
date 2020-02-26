@@ -66,7 +66,7 @@ class RescueDrug extends Component{
                         closeModal={this.closeModal} 
                         resetPackaging ={this.resetPackaging}/>}
                 </div>
-                    <button className='dose-button' onClick={this.updateRemainingDose}> + </button>
+                    <button className='dose-button' onClick={this.updateRemainingDose}> - </button>
             </div>
         )
     }

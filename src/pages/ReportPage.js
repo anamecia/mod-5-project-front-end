@@ -10,11 +10,13 @@ class Report extends Component {
     }
 
     componentDidMount = () => {
-        API.getUserAtcs()
-        .then(data => this.setState({
-            userAtcs: data
-        }))
-    }
+        // if(this.props.user === null) {
+        //     this.props.history.push('/')
+        // } else {
+            API.getUserAtcs()
+            .then(data => this.setState({ userAtcs: data}))
+        }
+    // }
 
     userLastAtcs = () => {
         const { userAtcs } = this.state
@@ -32,7 +34,7 @@ class Report extends Component {
         return(
             <div className='report-container'>
                 <p>Rescue Drugs usage</p>
-                <Charts/>
+                {this.props.user && <Charts/>}
                 <p>Asthma Control Test Scores</p>
                 {lastAtcs.map( atc => <AtcScore atc={atc} key={atc.id}/>)}
             </div>

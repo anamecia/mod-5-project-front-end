@@ -20,8 +20,12 @@ class MyDrugs extends Component {
     }
 
     componentDidMount = () => {
-        API.getUserMedicines()
-        .then(data => this.setState({ userDrugs:data }))
+        // if(this.props.user === null) {
+        //     this.props.history.push('/')
+        // } else{
+            API.getUserMedicines()
+            .then(data => this.setState({ userDrugs:data }))
+        // }  
     }
 
     userRescueDrugs = () => 

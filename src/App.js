@@ -56,7 +56,7 @@ class App extends Component{
     }
 
     render(){
-        const { user } = this.props
+        const { user } = this.state
         return(
             <div id='main-container'>
                 <NavBar user={user} toggleShowMenu={this.toggleShowMenu}/>
@@ -64,13 +64,14 @@ class App extends Component{
                 {this.state.showMenu  && <Brackdrop/>}
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
-                    <Route path='/home' component={HomePage}/>
+                    <Route path='/home' render={props => <HomePage {...props} user={user}/>}/>
                     <Route path='/signup' render={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' render={props => <SignInPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={user} toggleShowModal={this.toggleShowModal}/>}/>
-                    <Route path='/atc' component={AtcPage}/>
-                    <Route path='/notes' component={Notes}/> 
-                    <Route path='/report' component={Report}/>
+                    <Route path='/atc' render={props => <AtcPage {...props} user={user}/>}/>
+                    <Route path='/notes' render={props => <Notes {...props} user={user}/>}/> 
+                    <Route path='/report' render={props => <Report {...props} user={user}/>}/>
+                    <Route component={prosp => <h1>404 - Page not found</h1>}/>
                 </Switch>
             </div>
         )

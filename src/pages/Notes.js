@@ -12,12 +12,15 @@ class Notes extends Component{
     }
 
     componentDidMount = () => {
-        API.getUserNotes()
-        .then(data => this.setState({
+        // if(this.props.user === null) {
+        //     this.props.history.push('/')
+        // } else{
+            API.getUserNotes()
+            .then(data => this.setState({
             notes:  data.sort((a,b) => (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0))
-
         }))
-    }
+        }
+    // }
 
     toggleShowAddForm = () => {
         this.setState({
@@ -25,7 +28,7 @@ class Notes extends Component{
         })
     }
 
-    selectNote =  (note) => {
+    selectNote = (note) => {
         this.setState({
             selectedNote: note
         }) 
@@ -37,11 +40,17 @@ class Notes extends Component{
         })
     }
 
+    clearSelectedNote = () => {
+        this.setState({
+            selectedNote: ''
+        })
+    }
+
     render(){
         return(
             <div className='notes-container'>
                 {this.state.showAddForm  && <NoteForm addNote={this.addNote} toggleShowAddForm={this.toggleShowAddForm}/>}
-                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote} selectNote={this.selectNote}/>}
+                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote} selectNote={this.selectNote} clearSelectedNote={this.clearSelectedNote}/>}
                 {!this.state.showAddForm && !this.state.selectedNote &&
                 <>
                 <span className='add-button' onClick={this.toggleShowAddForm}> + </span>

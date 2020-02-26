@@ -8,8 +8,8 @@ class PollenCount extends Component{
     }
 
     componentDidMount = () => {
-        // API.getPollenCount(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(pollenCountData => this.setState({pollenCountInfo: pollenCountData.data[0]}))
+        API.getPollenCount(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(pollenCountData => this.setState({pollenCountInfo: pollenCountData.data[0]}))
     }
 
     grassValue = () => {
@@ -20,44 +20,44 @@ class PollenCount extends Component{
 
     treeValue = () => {
         if(this.state.pollenCountInfo)
-            if(!this.state.pollenCountInfo.types.grass.in_season)
+            if(!this.state.pollenCountInfo.types.tree.in_season)
                 return 'green'
     }
 
     gramialesValue = () => {
             if(this.state.pollenCountInfo)
-                if(!this.state.pollenCountInfo.types.grass.in_season)
+                if(!this.state.pollenCountInfo.types.gramiales.in_season)
                     return 'green'
     }
 
     ragweedValue = () => {
         if(this.state.pollenCountInfo)
-            if(!this.state.pollenCountInfo.types.grass.in_season)
+            if(!this.state.pollenCountInfo.types.ragweed.in_season)
                 return 'green'
     }
 
 
     render(){
-        const grassColor = {color:this.grassValue()}
-        const treeColor = {color:this.treeValue()}
-        const gramialesColor = {color:this.grassValue()}
-        const ragweedColor = {color:this.grassValue()}
+        const grassColor = {background:this.grassValue()}
+        const treeColor = {background:this.treeValue()}
+        const gramialesColor = {background:this.grassValue()}
+        const ragweedColor = {background:this.grassValue()}
 
         return(
             <div className='pollen-count-container'>
                 <p>Pollen Count</p>
                 <div className='pollen-count-subcontainer'>
-                    <div>
-                        <p style={grassColor}>Grass</p>
+                    <div className='plant-container'>
+                       <p>Grass</p><span style={grassColor}></span>
                     </div>
-                    <div>
-                        <p>Tree</p>
+                    <div className='plant-container'>
+                       <p>Tree</p><span style={treeColor}></span>
                     </div>
-                    <div>
-                        <p>Gramiales</p>
+                    <div className='plant-container'>
+                       <p>Gramiales</p><span style={gramialesColor}></span>
                     </div>
-                    <div>
-                        <p>Ragweed</p>
+                    <div className='plant-container'> 
+                        <p>Ragweed</p><span style={ragweedColor}></span>
                     </div>
                 </div>
             </div>

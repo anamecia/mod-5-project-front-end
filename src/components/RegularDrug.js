@@ -63,7 +63,7 @@ class RegularDrug extends Component{
                     deleteUseMedicine={deleteUseMedicine}
                     resetPackaging ={this.resetPackaging}/>}
                 </div>
-                <button className='dose-button' onClick={this.updateRemainingDose}>+</button> 
+                <button className='dose-button' onClick={this.updateRemainingDose}> - </button> 
                 {this.state.showDoseModal && <Modal 
                         closeModal={this.closeModal} 
                         resetPackaging ={this.resetPackaging}/>}
