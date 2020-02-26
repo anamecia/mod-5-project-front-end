@@ -29,7 +29,7 @@ class Chart extends Component{
 
     render(){
         return(
-            <Bar data={this.getChartData} options={{responsive: true}}/>
+            <Bar data={this.getChartData} options={{responsive: true, scales: {yAxes: [{ticks: { beginAtZero: true}}]}}}/>
         )
     }
 }

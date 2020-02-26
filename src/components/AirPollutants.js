@@ -82,8 +82,8 @@ class AirPollutants extends Component{
     }
 
     componentDidMount = () => {
-        API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData.data.pollutants}))
+        // API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        // .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData.data.pollutants}))
         // add catch to handle errors
     }
 

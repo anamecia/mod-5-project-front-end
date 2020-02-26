@@ -55,8 +55,8 @@ class Weather extends Component {
     }
 
     componentDidMount = () => {
-        API.getWeather(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        .then(weatherInfo => this.setState({weatherInfo: weatherInfo.data}))
+        // API.getWeather(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        // .then(weatherInfo => this.setState({weatherInfo: weatherInfo.data}))
         //add catch to handle errors
     }
 
