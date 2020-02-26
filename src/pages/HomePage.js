@@ -30,9 +30,9 @@ class HomePage extends Component{
     }
 
     componentDidMount(){
-        if(this.props.user === null) {
-            this.props.history.push('/')
-        } else
+        // if(this.props.user === null) {
+        //     this.props.history.push('/')
+        // } else
          this.checkBrowserGeolocation()
     }
 

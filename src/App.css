@@ -2,6 +2,7 @@ body{
     height: 100vh;
     margin: 0;
     font-family: 'IBM Plex Sans Condensed', sans-serif;;
+    overflow: hidden;
 }
 
 #main-container{
@@ -10,6 +11,135 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+
+/* NAV BAR */
+
+#nav-bar-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#nav-bar{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:4% 5%;
+    z-index: 200;
+    top:0;
+    left:0;
+    z-index: 100
+}
+
+.navbar-menu-container{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    height:100%;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index:200
+}
+
+.navbar-menu-container a{
+    text-decoration: none;
+    margin: 8% 0;
+    padding: 0 5% ;
+    color: rgb(51, 51, 51);
+}
+
+.navbar-menu-container a:hover{
+    color: #94D75B;
+}
+
+.backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    top:0;
+    right: 0;
+    z-index: 150;
+}
+
+#title{
+    font-family: lobster;
+    font-size: 2em;
+    color: #94D75B;
+    text-decoration: none;
+}
+
+.fa-bars{
+    font-size: 2em;
+    color: #94D75B;
+}
+
+/* FOOTER */
+
+#footer-container{
+    display: flex;
+    /* position: fixed; */
+    align-content: center;
+    justify-items: center;
+    left: 0;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    height: 20%;
+    background-color:#94D75B;
+    border-radius: 0%;
+    color:white ;
+}
+
+.footer-subcontainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.footer-subcontainer a{
+    text-decoration: none;
+    color:white;
+    font-size: 0.8em;
+}
+
+.footer-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+}
+
+.footer-option img{
+    margin-top: 5%;
+    width: 50%;
+    height: 50%;
+}
+
+.footer-option p{
+    margin: 7% 0 5% 0;
+}
+ 
+
+
+
+
+.sign-pages{
+    display: flex;
+    width: 85%;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /* LANDING PAGE */
 
@@ -232,97 +362,6 @@ body{
 
 .pollen-count-subcontainer div p{
     margin: 2% 0 2% 0;
-}
-
-#nav-bar-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#nav-bar{
-    display: flex;
-    width: 90%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding:4% 5%;
-    z-index: 200;
-    top:0;
-    left:0;
-    z-index: 100
-}
-
-.navbar-menu-container{
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    height:100%;
-    width: 50%;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    z-index:200
-}
-
-.navbar-menu-container a{
-    text-decoration: none;
-    margin: 8% 0;
-    padding: 0 5% ;
-    color: black;
-}
-
-.backdrop{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    top:0;
-    right: 0;
-    z-index: 150;
-}
-
-#title{
-    font-family: lobster;
-    font-size: 2em;
-    color: #94D75B;
-    text-decoration: none;
-}
-
-.fa-bars{
-    font-size: 2em;
-    color: #94D75B;
-}
-
-#footer{
-    display: flex;
-    /* position: fixed; */
-    left: 0;
-    bottom: 0;
-    height: 10%;
-    width: 100%;
-    height: 20%;
-    background-color:#94D75B;
-    border-radius: 0%;
-    color:white ;
-}
- 
-#footer a{
-    flex-grow: 1;
-    text-align: center;
-    justify-self: center;
-}
-
-.footer-icon{
-    width: 50%;
-    height: 50%;
-}
-.sign-pages{
-    display: flex;
-    width: 85%;
-    height: 50vh;
-    flex-direction: column;
-    align-items: center;
 }
 
 .sign-form{
