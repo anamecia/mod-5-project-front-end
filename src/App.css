@@ -1,7 +1,8 @@
 body{
     height: 100vh;
     margin: 0;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    color: rgb(31, 30, 30);
     overflow: hidden;
 }
 
@@ -299,9 +300,12 @@ body{
 }
 
 .air-quality-container h1{
-    font-size: 1.5em;
+    font-size: 1.9em;
     margin: 0;
 }
+
+
+
 
 .air-pollutans-container{
     display: flex;

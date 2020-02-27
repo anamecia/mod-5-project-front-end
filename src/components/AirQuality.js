@@ -20,7 +20,7 @@ class AirQuality extends Component{
         // add catch to handle errors
     }
 
-    checkAirQuality = () => {
+    airQualityDescription = () => {
         const airQuality = this.state.airQualityInfo.aqi
         if (airQuality >= 0 &&  airQuality <= 50)
             return 'Good' 
@@ -36,12 +36,23 @@ class AirQuality extends Component{
             return 'Hazardous'
     }
 
+    airQualityColor = () => {
+        const airQuality = this.state.airQualityInfo.aqi
+        if (airQuality >= 0 &&  airQuality <= 50)
+            return '#c8eba0' 
+        if (airQuality >= 51 &&  airQuality <= 100)
+            return '#ffdb80'
+        if (airQuality >= 101 &&  airQuality <= 500)
+            return '#ff7a70'
+    }
+
     render(){
         const { airQualityInfo } = this.state
+        const color ={color: this.airQualityColor()}
         return(
             <div className='air-quality-container'>
                 <p>Air Quality</p>
-                {airQualityInfo && <h1>{this.checkAirQuality()}</h1>}
+                {airQualityInfo && <h1 style={color}>{this.airQualityDescription()}</h1>}
                 {airQualityInfo && <p>{airQualityInfo.aqi} aqi</p>}
             </div>
         )
