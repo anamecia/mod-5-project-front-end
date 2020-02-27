@@ -91,11 +91,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.co.concentration.value
             if (value >= 0 && value <= 2000)
-                return 'green'
+                return '#57ad42'
             if (value >= 2010 && value <= 9000)
-                return 'yellow'
+                return '#ffdb80'
             if(value >= 9010 && value <= 15000)
-            return 'red'
+            return '#ff7a70'
         }
         
     }
@@ -104,11 +104,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.no2.concentration.value
             if (value >= 0 && value <= 30)
-                return 'green'
+                return '#57ad42'
             if (value >= 31 && value <= 60)
-            return 'yellow'
+            return '#ffdb80'
             if(value >= 61 && value <= 2000)
-                return 'red'
+                return '#ff7a70'
         }
     }
 
@@ -116,11 +116,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.o3.concentration.value
             if (value >= 0 && value <= 30)
-                return 'green'
+                return '#57ad42'
             if (value >= 31 && value <= 90)
-            return 'yellow'
+                return '#ffdb80'
             if(value >= 91 && value <= 600)
-                return 'red'
+                return '#ff7a70'
         }
     }
 
@@ -128,11 +128,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.so2.concentration.value
             if (value >= 0 && value <= 20)
-                return 'green'
+                return '#57ad42'
             if (value >= 21 && value <= 50)
-            return 'yellow'
+                return '#ffdb80'
             if(value >= 51 && value <= 100)
-                return 'red'
+                return '#ff7a70'
         }
     }
 
@@ -140,11 +140,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.pm25.concentration.value
             if (value >= 0 && value <= 15)
-                return 'green'
+                return '#57ad42'
             if (value >= 16 && value <= 50)
-            return 'yellow'
+            return '#ffdb80'
             if(value >= 51 && value <= 500)
-                return 'red'
+                return '#ff7a70'
         }
     }
 
@@ -153,11 +153,11 @@ class AirPollutants extends Component{
         if (this.state.airPollutantsInfo){
             const value = this.state.airPollutantsInfo.pm10.concentration.value
             if (value >= 0 && value <= 30)
-                return 'green'
+                return '#57ad42'
             if (value >= 31 && value <= 80)
-            return 'yellow'
+            return '#ffdb80'
             if(value >= 81 && value <= 600)
-                return 'red'
+                return '#ff7a70'
         }
     }
 
@@ -165,13 +165,12 @@ class AirPollutants extends Component{
 
     render(){
         const { airPollutantsInfo } = this.state
-        const coColor = {background:this.coValue()}
-        const no2Color = {background:this.no2Value()}
-        const o3Color = {background:this.o3Value()}
-        const so2Color = {background:this.so2Value()}
-
-        const pm25Color = {background:this.pm25Value()}
-        const pm10Color = {background:this.pm10Value()}
+        const coColor = {background: this.coValue()}
+        const no2Color = {background: this.no2Value()}
+        const o3Color = {background: this.o3Value()}
+        const so2Color = {background: this.so2Value()}
+        const pm25Color = {background: this.pm25Value()}
+        const pm10Color = {background: this.pm10Value()}
 
         return(
            
@@ -181,32 +180,32 @@ class AirPollutants extends Component{
                     <div>
                         <span style={coColor}></span>
                         <p>CO</p>
-                        {airPollutantsInfo && <p>{airPollutantsInfo.co.concentration.value} {airPollutantsInfo.co.concentration.units}</p>}
+                        {/* {airPollutantsInfo && <p>{airPollutantsInfo.co.concentration.value} {airPollutantsInfo.co.concentration.units}</p>} */}
                     </div>
                     <div>
                         <span style={no2Color}></span>
                         <p>NO2</p>
-                        {airPollutantsInfo && <p>{airPollutantsInfo.no2.concentration.value} {airPollutantsInfo.no2.concentration.units}</p>}
+                        {/* {airPollutantsInfo && <p>{airPollutantsInfo.no2.concentration.value} {airPollutantsInfo.no2.concentration.units}</p>} */}
                     </div>
                     <div>
                         <span style={o3Color}></span>
                         <p>O3</p>
-                        {airPollutantsInfo && <p>{airPollutantsInfo.o3.concentration.value} {airPollutantsInfo.o3.concentration.units}</p>}
+                        {/* {airPollutantsInfo && <p>{airPollutantsInfo.o3.concentration.value} {airPollutantsInfo.o3.concentration.units}</p>} */}
                     </div>
                     <div>
                         <span style={so2Color}></span>
                         <p>SO2</p>
-                        {airPollutantsInfo && <p>{airPollutantsInfo.so2.concentration.value} {airPollutantsInfo.so2.concentration.units}</p>}
+                        {/* {airPollutantsInfo && <p>{airPollutantsInfo.so2.concentration.value} {airPollutantsInfo.so2.concentration.units}</p>} */}
                     </div>
                     <div>
                         <span style={pm25Color}></span>
                         <p>PM2.5</p>
-                        {airPollutantsInfo &&<p>{airPollutantsInfo.pm25.concentration.value} {airPollutantsInfo.pm25.concentration.units}</p>}
+                        {/* {airPollutantsInfo &&<p>{airPollutantsInfo.pm25.concentration.value} {airPollutantsInfo.pm25.concentration.units}</p>} */}
                     </div>
                     <div>
                         <span style={pm10Color}></span>
                         <p>PM10</p>
-                        {airPollutantsInfo && <p>{airPollutantsInfo.pm10.concentration.value} {airPollutantsInfo.pm10.concentration.units}</p>}
+                        {/* {airPollutantsInfo && <p>{airPollutantsInfo.pm10.concentration.value} {airPollutantsInfo.pm10.concentration.units}</p>} */}
                     </div>
                 </div>
             </div>

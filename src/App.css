@@ -305,7 +305,7 @@ body{
 }
 
 
-
+/* AIR POLLUTANTS  */
 
 .air-pollutans-container{
     display: flex;
@@ -326,21 +326,20 @@ body{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 .air-pollutans-subcontainer div{
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    align-items: center;
 }
 
 .air-pollutans-subcontainer div p{
   text-align: center;
+  margin-left: 3%;
 }
 
 .air-pollutans-subcontainer div span{
-    position: absolute;
     height: 12px;
     width: 12px;
     border-radius: 100%;
@@ -350,11 +349,6 @@ body{
     display: flex;
     flex-direction: row;
     width: 100%;
-}
-
-.air-pollutants-span{
-    background-color: grey;
-    border-radius: 40%;
 }
 
 .pollen-count-container {
