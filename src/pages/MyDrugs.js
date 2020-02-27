@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchForm from '../components/SearchForm'
 import RescueDrugs from '../containers/RescueDrugsContainer'
 import RegularDrugs from '../containers/RegularDrugsContainer'
+import Backdrop from '../components/Backdrop'
 import API from '../API'
 
 class MyDrugs extends Component {
@@ -67,6 +68,7 @@ class MyDrugs extends Component {
                         userDrugs={userDrugs}
                         addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
                 </div>
+                    {medicineType && <Backdrop/>}
                 <div id='drugs-container'>
                     <p className='drug-type'>Rescue Drugs</p>
                     <RescueDrugs 

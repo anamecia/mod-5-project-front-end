@@ -687,22 +687,33 @@ body{
 /* SEARCH */
 
 #search-form-container{
-    z-index: 1;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    z-index: 200;
 }
 
 #search-form{
-    width: 60%;
-    height: 30%;
+    width: 72%;
+    height: 30px;
     border: solid rgb(223, 220, 220) 0.1em;
 }
 
 #search-results{
-     width: 60%;
-     font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+     width: 73%;
+     font-size: 0.7em;
+     background: rgb(255, 255, 255);
+    
+}
+
+#search-result{
+    margin: 0;
+    height: 25px;
+    border: solid rgb(248, 243, 243) 1px
 }
 
 
