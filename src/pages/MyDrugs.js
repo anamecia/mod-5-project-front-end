@@ -74,14 +74,14 @@ class MyDrugs extends Component {
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}
                         toggleShowModal={toggleShowModal}/>
-                    <span className='add-button' onClick={() => this.updateMedicineType({value:'rescue'})}> + </span>
+                    <button className='add-button' onClick={() => this.updateMedicineType({value:'rescue'})}> + </button>
                     <p className='drug-type'>Regular Drugs</p>
                     <RegularDrugs 
                         userRegularDrugs={this.userRegularDrugs()}
                         deleteUseMedicine={this.deleteUseMedicine}
                         updateUserMedicines={this.updateUserMedicines}
                         toggleShowModal={toggleShowModal}/>
-                    <span className='add-button' onClick={() => this.updateMedicineType({value:'regular'})}> + </span>
+                    <button className='add-button' onClick={() => this.updateMedicineType({value:'regular'})}> + </button>
                 </div>
             </div>
         )

@@ -504,6 +504,9 @@ body{
     font-size: 0.8em;
 }
 
+
+/* MY DRUGS PAGE */
+
 #my-drugs-container{
     display: flex;
     width: 85%;
@@ -519,48 +522,72 @@ body{
 }
 
 .drug-type{
-    font-size: 0.7em;
+    font-size: 0.75em;
     margin-bottom: 0;
 }
 
 .drug-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 4%;
-    background-color: rgb(233, 229, 229);
     padding: 4%;
+    background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%)); 
+    color: white;
+    border-radius: 3%;
 }
 
-.drug-info h1{
+.drug-info{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 100%;
+}
+
+.drug-info div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.medicine-name-container{ 
+    width: 85%;
+}
+.medicine-name-container h1{
     font-size: 0.9em;
     margin: 0;
+}
+
+.arrow-container{
+    width: 5%;
+    align-items: flex-start;
+}
+
+.arrow-container img{
+    width: 100%;
 }
 
 .drug-info p{
     font-size: 0.75em;
-    margin: 0;
+    margin: 2% 0;
 }
 
 .drug-info h3{
-    font-size: 0.9em;
+    font-size: 0.97em;
+    margin: 0;
     text-align: center;
-    margin: 2%
 }
 
 .more-info{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(233, 229, 229);
+    width: 100%;
+    background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%)); 
 }
 
 .more-info div{
     display: flex;
     justify-content: flex-end; 
-}
-
-.more-info div i{
-    color: white
 }
 
 .logos-container{
@@ -582,28 +609,40 @@ body{
 }
 
 #reset-button{
-    background-color: white;
+    background-color:  rgba(225, 225, 225, 0.4);;
+    color: white;
     width: 20%;
-    border-radius: 15%;
-    margin-top: 2%;
+    border-radius: 10%;
+    margin-top: 4%;
 }
 
 .dose-button{
-    z-index: 1;
-    display:block;
     border-radius: 100%;
     padding: 0;
     height:30px;
     width: 30px;
     background-color: white;
-    margin-bottom: ;
+    border: none;
+    align-self: flex-start;
+    align-content: center;
+    justify-content: center;
+}
+
+.dose-button img{
+    width: 70%;
+    height: 70%;
+    
 }
 
 .add-button{
    margin-top: 2.5%; 
    margin-bottom: 2.5%;
-   border: solid grey 0.1em;
+   border: 2px solid;
+   border-image-source: linear-gradient(to left, #24c6dc, #514a9d);
+   border-image-slice: 1;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+   background-color: white;
+   color: #0d5fbd;
    text-align: center;
 }
 
@@ -619,7 +658,7 @@ body{
 }
 
 .modal p{
- margin: 2% 0
+    margin: 2% 0
 }
 
 .modal-buttons{
