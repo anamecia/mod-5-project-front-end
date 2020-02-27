@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Forecast from '../containers/Forecast'
 import Footer from '../components/Footer'
+import Loader from '../components/Loader'
 
 
 class HomePage extends Component{
@@ -40,6 +41,7 @@ class HomePage extends Component{
         const {latitude, longitude} = this.state
         return(
             <div id='home-container'>
+                {!latitude && <Loader/>}
                 {latitude && <Forecast latitude={latitude} longitude={longitude}/>}  
                 <Footer/>
             </div>
