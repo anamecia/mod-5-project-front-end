@@ -94,49 +94,74 @@ class PollenCount extends Component{
     grassValue = () => {
         if(this.state.pollenCountInfo)
             if(!this.state.pollenCountInfo.types.grass.in_season)
-                return 'green'
+                return 1
     }
 
     treeValue = () => {
         if(this.state.pollenCountInfo)
             if(!this.state.pollenCountInfo.types.tree.in_season)
-                return 'green'
+                return 1
     }
 
-    gramialesValue = () => {
+    graminalesValue = () => {
             if(this.state.pollenCountInfo)
-                if(!this.state.pollenCountInfo.types.gramiales.in_season)
-                    return 'green'
+                if(!this.state.pollenCountInfo.types.tree.in_season)
+                    return 1
     }
 
     ragweedValue = () => {
         if(this.state.pollenCountInfo)
             if(!this.state.pollenCountInfo.types.ragweed.in_season)
-                return 'green'
+                return 1
     }
 
 
     render(){
-        const grassColor = {background:this.grassValue()}
-        const treeColor = {background:this.treeValue()}
-        const gramialesColor = {background:this.grassValue()}
-        const ragweedColor = {background:this.grassValue()}
+        const firstSpan = {background:this.grassValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.5)'}
 
         return(
             <div className='pollen-count-container'>
                 <p>Pollen Count</p>
                 <div className='pollen-count-subcontainer'>
                     <div className='plant-container'>
-                       <p>Grass</p><span style={grassColor}></span>
+                       <p>Grass</p>
+                       <div>
+                        <span style={{background:this.grassValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.grassValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.grassValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.grassValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.grassValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                       </div>
                     </div>
                     <div className='plant-container'>
-                       <p>Tree</p><span style={treeColor}></span>
+                       <p>Tree</p>
+                       <div>
+                        <span style={{background:this.treeValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.treeValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.treeValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.treeValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                        <span style={{background:this.treeValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                       </div>
                     </div>
                     <div className='plant-container'>
-                       <p>Gramiales</p><span style={gramialesColor}></span>
+                       <p>Graminales</p>
+                       <div>
+                            <span style={{background:this.graminalesValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.graminalesValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.graminalesValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.graminalesValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.graminalesValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                       </div>
                     </div>
                     <div className='plant-container'> 
-                        <p>Ragweed</p><span style={ragweedColor}></span>
+                        <p>Ragweed</p>
+                        <div>
+                            <span style={{background:this.grassValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.grassValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.grassValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.grassValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                            <span style={{background:this.grassValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
+                       </div>
                     </div>
                 </div>
             </div>

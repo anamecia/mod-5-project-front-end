@@ -221,6 +221,7 @@ body{
     flex-direction: column;
     width: 100%;
     background-color: rgb(214, 228, 178);
+
     color: white
 }
 
@@ -351,37 +352,58 @@ body{
     width: 100%;
 }
 
+
+/* POLLEN */
+
 .pollen-count-container {
     display: flex;
     flex-direction: column;
-    width: 85%;
-    margin: 5% 0 2% 0;
-    padding: 0 30% 0 30%;
+    width: 100%;
+    margin: 5% 0 0% 0;
+}
+
+.pollen-count-subcontainer {
+    background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%)); 
+    padding: 5% 10% 5% 10%;
 }
 
 .pollen-count-container p{
     font-size: 0.9em;
     text-align: left;
-    width: 100%;
-    margin:  0 0 2% 0;
+    margin:  0 0 2% 8%;
 }
 
 .plant-container{
     display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    margin: 3% 0;
 }
 
-.plant-container span{
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    border-radius: 100%;
+.plant-container div{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin-left: 3%;
+   width: 100%;
 }
 
 .pollen-count-subcontainer div p{
-    margin: 2% 0 2% 0;
+    width: 35%;
+    color: white;
+    font-size: 1.1em;
+    margin: 0;
 }
+
+.plant-container div span{
+    height: 8px;
+    width: 20px;
+    border-radius: 30%;
+}
+
+
+
+
+
 
 .sign-form{
     display: flex;
