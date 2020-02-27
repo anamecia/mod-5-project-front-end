@@ -16,7 +16,7 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className='main-image-container'>
-                <img src={forest} alt='fores'/>
+                <img src={forest} alt='forest'/>
             </div>
         </div>
     )

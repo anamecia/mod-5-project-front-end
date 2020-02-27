@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-// import API from '../API'
+import WeatherImage from "./WeatherImage";
+import API from '../API'
 
 
 class Weather extends Component {
 
     state = {
-        // weather: null
+        // weatherInfo: null,
         weatherInfo: {
             "datetime": "2020-02-19T11:00:00Z",
             "is_day_time": true,
@@ -66,10 +67,10 @@ class Weather extends Component {
         return (
              <div id='weather-container'>
                 <div className='weather-subcontainer'>
-                    <div className='weather-details'>
-                        <span>image</span>
+                    <div className='weather-image-container'>
+                        {weatherInfo && <WeatherImage weatherDescription={weatherInfo.weather_text}/>}
                     </div>
-                    <div className='weather-details'>
+                    <div className='weather-info-details'>
                         {weatherInfo && <h3>{weatherInfo.weather_text}</h3>}
                         {weatherInfo && <h1>{Math.floor(weatherInfo.temperature.value)}°C</h1>}
                     </div>
@@ -81,7 +82,7 @@ class Weather extends Component {
                     </div>
                     <div className='weather-details'>
                         <p name='title'>Wind Speed</p>
-                        {weatherInfo && <p>{weatherInfo.wind.speed.value} km/h</p>}
+                        {weatherInfo && <p>{Math.floor(weatherInfo.wind.speed.value)} km/h</p>}
                     </div>
                     <div className='weather-details'>
                         <p name='title'>Precipitation</p>

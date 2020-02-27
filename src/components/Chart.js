@@ -28,9 +28,13 @@ class Chart extends Component{
     }
 
     render(){
+        // debugger
+        if (this.props.medicine.taken_doses.length > 0)
+        
         return(
             <Bar data={this.getChartData} options={{responsive: true, scales: {yAxes: [{ticks: { beginAtZero: true}}]}}}/>
         )
+        return null
     }
 }
 

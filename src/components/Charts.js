@@ -17,7 +17,7 @@ class  Charts extends Component {
     render(){
         return(
             <div>
-                {this.state.rescueMedicines.map(medicine => <Chart medicine={medicine} key={medicine.id}/>)}
+                {this.state.rescueMedicines && this.state.rescueMedicines.map(medicine => <Chart medicine={medicine} key={medicine.id}/>)}
             </div>
         )
     }

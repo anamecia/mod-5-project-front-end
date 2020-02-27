@@ -28,7 +28,6 @@ body{
     align-items: center;
     justify-content: space-between;
     padding:4% 5%;
-    z-index: 200;
     top:0;
     left:0;
     z-index: 100
@@ -78,6 +77,7 @@ body{
     font-size: 2em;
     color: #94D75B;
 }
+
 
 /* FOOTER */
 
@@ -129,18 +129,6 @@ body{
 }
  
 
-
-
-
-.sign-pages{
-    display: flex;
-    width: 85%;
-    height: 50vh;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 /* LANDING PAGE */
 
 #landing-container{
@@ -169,6 +157,14 @@ body{
     text-align: center; 
 }
 
+.sign-pages{
+    display: flex;
+    width: 85%;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+}
+
 #sign-btn-container{
     display: flex;
     flex-direction: column;
@@ -195,7 +191,7 @@ body{
 
 .main-image-container{
     overflow: hidden;  
-    width: 135%
+    width: 135%;
 }
 
 .main-image-container img {
@@ -206,6 +202,7 @@ body{
 }
 
 
+/* HOME PAGE */
 
 #home-container{
     display: flex;
@@ -215,11 +212,13 @@ body{
     width: 100%;
 }
 
+
+/* WEATHER */
+
 #weather-container{
     display:flex;
     flex-direction: column;
     width: 100%;
-    min-height: 30%;
     background-color: rgb(214, 228, 178);
     color: white
 }
@@ -231,21 +230,41 @@ body{
     justify-content: space-evenly;
 }
 
+.weather-info-details{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-image-container{
+    display:flex;
+    width: 30%;
+}
+
+.weather-image{
+    width: 80%;
+}
+
+.weather-image img{
+    width: 50%;
+    align-content: flex-end;
+}
+
+.weather-info-details h3{
+    font-size: 1em;
+    margin: 5% 0 5% 0;
+}
+
+.weather-info-details h1{
+    font-size: 2.5em;
+    margin: 5% 0 5% 0;
+}
+
 .weather-details{
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-}
-
-.weather-details h3{
-    font-size: 1em;
-    margin: 5% 0 5% 0;
-}
-
-.weather-details h1{
-    font-size: 2.5em;
-    margin: 5% 0 5% 0;
 }
 
 .weather-details p{
@@ -256,8 +275,10 @@ body{
 .weather-details p[name='title']{
     margin-bottom: 0;
     font-weight: 800;
-
 }
+
+
+/* AIR QUALITY */
 
 .air-quality-container{
     display: flex;
