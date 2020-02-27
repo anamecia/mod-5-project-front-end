@@ -39,11 +39,11 @@ class AtcPage extends Component{
         const { questionNumber } = this.state 
         return(
             <div id='atc-container'>
-                {questionNumber===0 && <Question test={data.questions[0]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===1 && <Question test={data.questions[1]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===2 && <Question test={data.questions[2]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===3 && <Question test={data.questions[3]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
-                {questionNumber===4 && <Question test={data.questions[4]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===0 && <Question number={questionNumber + 1} test={data.questions[0]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===1 && <Question number={questionNumber + 1} test={data.questions[1]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===2 && <Question number={questionNumber + 1} test={data.questions[2]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===3 && <Question number={questionNumber + 1} test={data.questions[3]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
+                {questionNumber===4 && <Question number={questionNumber + 1} test={data.questions[4]} updateQuestionNumberAndScore={this.updateQuestionNumberAndScore}/>}
                 {questionNumber===5 && <AtcResult score={this.state.score}/>}
             </div>
         )
