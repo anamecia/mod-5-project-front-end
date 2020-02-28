@@ -220,7 +220,7 @@ body{
     display:flex;
     flex-direction: column;
     width: 100%;
-    background:#e3dbca;
+    background:#c8e6d2;
 
     color: white
 }
@@ -364,7 +364,7 @@ body{
 
 .pollen-count-subcontainer {
     /* background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%));  */
-    background: rgb(215, 236, 243);
+    background: #c8e6d2;
     padding: 5% 10% 5% 10%;
 }
 
@@ -548,6 +548,7 @@ body{
     background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%)); 
     color: white;
     border-radius: 3%;
+    overflow: scroll;
 }
 
 .drug-info{
@@ -665,16 +666,21 @@ body{
 .modal{
     display: flex;
     flex-direction: column;
-    position:fixed;
+    /* position:relative; */
     padding: 2%;
     background-color: white;
     align-self: center;
     margin-bottom: 4%;
-    /* z-index: 200; */
+    border-radius: 4%;
+    z-index: 200;
+    top:0px;
+    left:0px;
 }
 
 .modal p{
-    margin: 2% 0
+    color: black;
+    font-size: 0.9em;
+    margin: 2% 0;
 }
 
 .modal-buttons{
@@ -780,17 +786,22 @@ body{
     margin-bottom: 0;
 }
 
+
+/* REPORT */
+
 .report-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 85%;
     height: 100%;
+    overflow: scroll;
 }
 
 .report-container p{
     align-self: flex-start;
     font-size: 0.8em;
+    margin-top: 10%;
 }
 
 .score-container{
@@ -800,7 +811,7 @@ body{
 }
 
 .score-container span{
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 3% 0;
 }
 

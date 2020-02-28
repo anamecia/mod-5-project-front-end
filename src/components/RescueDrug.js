@@ -5,6 +5,7 @@ import Modal from './Modal'
 import inhaler from '../images/inhaler.svg'
 import up from '../images/up-arrow.svg'
 import down from '../images/down-arrow.svg'
+import Brackdrop from './Backdrop'
 var moment = require('moment')
 
 
@@ -72,11 +73,12 @@ class RescueDrug extends Component{
                         drug={drug}
                         deleteUseMedicine={deleteUseMedicine}
                         resetPackaging ={this.resetPackaging}/>}
+                </div>
+                    <button className='dose-button' onClick={this.updateRemainingDose}><img src={inhaler}/></button>
                     {this.state.showDoseModal && <Modal 
                         closeModal={this.closeModal} 
                         resetPackaging ={this.resetPackaging}/>}
-                </div>
-                    <button className='dose-button' onClick={this.updateRemainingDose}><img src={inhaler}/></button>
+                    {this.state.showDoseModal && <Brackdrop/>}
             </div>
         )
     }

@@ -25,8 +25,7 @@ class Report extends Component {
             if(userAtcs.length <= 5)
                 return userAtcs
             return userAtcs.slice(-6)
-        }
-         
+        }    
     }
 
     render(){

@@ -5,6 +5,7 @@ import Modal from './Modal'
 import inhaler from '../images/inhaler.svg'
 import up from '../images/up-arrow.svg'
 import down from '../images/down-arrow.svg'
+import Backdrop from './Backdrop'
 
 var moment = require('moment')
 
@@ -69,15 +70,16 @@ class RegularDrug extends Component{
                     <h3>{drug.remaining_doses}/{drug.medicine.number_of_doses[0]}</h3>
                 </div>
                 <div className='more-info'>
-                {this.state.displayMoreInfo && <DrugMoreInfo 
-                    drug={drug}
-                    deleteUseMedicine={deleteUseMedicine}
-                    resetPackaging ={this.resetPackaging}/>}
+                    {this.state.displayMoreInfo && <DrugMoreInfo 
+                        drug={drug}
+                        deleteUseMedicine={deleteUseMedicine}
+                        resetPackaging ={this.resetPackaging}/>}
                 </div>
                 <button className='dose-button' onClick={this.updateRemainingDose}><img src={inhaler}/></button> 
                 {this.state.showDoseModal && <Modal 
-                        closeModal={this.closeModal} 
-                        resetPackaging ={this.resetPackaging}/>}
+                            closeModal={this.closeModal} 
+                            resetPackaging ={this.resetPackaging}/>}
+                    {this.state.showDoseModal && <Backdrop/>}
             </div>  
         )
     }

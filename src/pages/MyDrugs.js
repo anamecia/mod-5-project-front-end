@@ -13,12 +13,13 @@ class MyDrugs extends Component {
     }
 
     updateMedicineType = (type) => {
-
-        if (type.value === this.state.medicineType)
-            this.setState({ medicineType: ''})
-        else
-            this.setState({ medicineType: type.value })
+        this.setState({ medicineType: type.value })
     }
+
+    closeSearchForm = () => {
+        this.setState({ medicineType: '' })
+    }
+    
 
     componentDidMount = () => {
         // if(this.props.user === null) {
@@ -68,7 +69,7 @@ class MyDrugs extends Component {
                         userDrugs={userDrugs}
                         addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
                 </div>
-                    {medicineType && <Backdrop/>}
+                    {medicineType && <Backdrop closeSearchForm={this.closeSearchForm}/>}
                 <div id='drugs-container'>
                     <p className='drug-type'>Rescue Drugs</p>
                     <RescueDrugs 
