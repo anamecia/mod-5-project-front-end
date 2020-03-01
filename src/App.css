@@ -866,13 +866,30 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     width: 65%;
-    padding-right: 4%;
-    padding-left: 4%;
+    padding: 3%;
     background-color: rgb(233, 229, 229);
     background:  #c2e4e5;
     color:white;
     border-radius: 3%;
     margin: 1%;
+}
+
+.note-container div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.notes-container div div{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+
+.notes-container div div img{
+    width: 20px;
+    height: 20px;
+    padding: 0 8%;
 }
 
 .note-title{

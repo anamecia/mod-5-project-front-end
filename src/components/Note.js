@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import bin from '../images/bin.svg'
+import edit from '../images/edit.svg'
 var moment = require('moment')
 
 class Note extends Component{
@@ -9,7 +11,15 @@ class Note extends Component{
         return (
             <>      
                 <div className='note-container'onClick={()=> selectNote(current_note)}>
-                    <p className='note-date'>{moment(current_note.created_at).format("Do MMM YYYY")}</p>
+                    <div>
+                        <p className='note-date'>{moment(current_note.created_at).format("Do MMM YYYY")}</p>
+                        {selectedNote && 
+                            <div>
+                                <img src={edit}/>
+                                <img src={bin}/>
+                            </div>
+                        }
+                    </div>
                     <p className='note-title'>{current_note.title ? current_note.title : 'Untitled '}</p>
                     {selectedNote && <p className='note-content'>{current_note.content}</p>}
                 </div>
