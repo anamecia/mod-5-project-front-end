@@ -220,7 +220,7 @@ body{
     display:flex;
     flex-direction: column;
     width: 100%;
-    background:#c8e6d2;
+    background:#c8e5e6;
 
     color: white
 }
@@ -364,7 +364,7 @@ body{
 
 .pollen-count-subcontainer {
     /* background: linear-gradient(to left, #36d1dc, hsl(221, 73%, 63%));  */
-    background: #c8e6d2;
+    background: #c8e5e6;
     padding: 5% 10% 5% 10%;
 }
 
@@ -400,9 +400,6 @@ body{
     width: 20px;
     border-radius: 30%;
 }
-
-
-
 
 
 
@@ -444,7 +441,15 @@ body{
 
 /* ASTHMA CONTROL TEST */
 
-#atc-container{
+.atc-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+#atc-subcontainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -515,6 +520,81 @@ body{
 .result{
     font-size: 0.9em;
 }
+
+.atc-not-allowed-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.atc-not-allowed-container h3{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.atc-not-allowed-container h1{
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.atc-not-allowed-container h1 span{
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+    background: linear-gradient(to left, #24c6dc, #514a9d);
+    border-radius: 3%;
+    padding: 0 2%;
+}
+
+.atc-not-allowed-container a{
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    font-weight: 700;
+    background: linear-gradient(to left, #24c6dc, #514a9d);
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.25);  
+    padding: 0.7em;
+    width: 30%;
+    margin-top: 10%; 
+}
+
+.start-atc-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60%;
+}
+
+.start-atc-container div p{
+    color: white;
+    text-align: center;
+    font-size: 0.95em;
+    font-weight: 700;
+    line-height: 1.6em;
+    background: #c2e4e5;
+    padding: 4%;
+    border-radius: 2%;
+}
+
+.start-atc-container button{
+    text-align: center;
+    color:white;
+    font-weight: 700;
+    background: linear-gradient(to left, #24c6dc, #514a9d);
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.25);  
+    padding: 0.7em;
+    width: 30%;
+    margin-top: 10%; 
+}
+
+
 
 
 /* MY DRUGS PAGE */
