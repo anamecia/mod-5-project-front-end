@@ -46,11 +46,28 @@ class Notes extends Component{
         })
     }
 
+    deleteNote = (noteToRemove) => {
+        API.deleteNote(noteToRemove.id)
+        .then(() => this.setState({
+            notes: [...this.state.notes].filter(note => note.id !== noteToRemove.id),
+            selectedNote: ''
+        }))  
+    }
+
+    addUpdatedNote = (oldNote, updatedNote) => {
+        const index = this.state.notes.indexOf(oldNote)
+        const notesArray = [...this.state.notes]
+        notesArray.splice(index, 1, updatedNote)
+        this.setState({
+            userDrugs: notesArray
+        })
+    }
+
     render(){
         return(
             <div className='notes-container'>
-                {this.state.showAddForm  && <NoteForm addNote={this.addNote} toggleShowAddForm={this.toggleShowAddForm}/>}
-                {this.state.selectedNote  && <Note selectedNote={this.state.selectedNote} selectNote={this.selectNote} clearSelectedNote={this.clearSelectedNote}/>}
+                {this.state.showAddForm  && <NoteForm addNote={this.addNote} toggleShowAddForm={this.toggleShowAddForm} selectedNote={this.state.selectedNote} addUpdatedNote={this.addUpdatedNote}/>}
+                {this.state.selectedNote  && !this.state.showAddForm && <Note selectedNote={this.state.selectedNote} selectNote={this.selectNote} clearSelectedNote={this.clearSelectedNote} deleteNote={this.deleteNote} toggleShowAddForm={this.toggleShowAddForm}/>}
                 {!this.state.showAddForm && !this.state.selectedNote &&
                 <>
                 <span className='add-button' onClick={this.toggleShowAddForm}> + </span>

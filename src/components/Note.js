@@ -6,7 +6,7 @@ var moment = require('moment')
 class Note extends Component{
 
     render(){
-        const { note, selectNote, selectedNote, clearSelectedNote } = this.props
+        const { note, selectNote, selectedNote, clearSelectedNote, deleteNote , toggleShowAddForm} = this.props
         const current_note = selectedNote ? selectedNote : note
         return (
             <>      
@@ -15,8 +15,8 @@ class Note extends Component{
                         <p className='note-date'>{moment(current_note.created_at).format("Do MMM YYYY")}</p>
                         {selectedNote && 
                             <div>
-                                <img src={edit}/>
-                                <img src={bin}/>
+                                <img onClick={toggleShowAddForm} src={edit} alt='edit icon'/>
+                                <img onClick={() => deleteNote(selectedNote)} src={bin} alt='delete icon'/>
                             </div>
                         }
                     </div>
