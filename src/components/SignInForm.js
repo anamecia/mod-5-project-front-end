@@ -62,7 +62,7 @@ class SignInForm  extends Component {
             <>
                 <div>{this.state.usernameErrors}</div>
                 <div>{this.state.passwordErrors}</div>
-                <div>{this.state.loginError}</div>
+              
                 <form className='sign-form'onSubmit={this.handleSubmit}>
                     <label>Username</label>
                     <input className='input'onChange={this.handleChange} type='text' name='username' value={this.state.username}/>
