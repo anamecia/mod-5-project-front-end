@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Brackdrop = ({ closeSearchForm }) => {
+const Brackdrop = ({ closeSearchForm, toggleShowMenu }) => {
     return(
-        <div className='backdrop' onClick={closeSearchForm}>
+        <div className='backdrop' onClick={closeSearchForm || toggleShowMenu}>
         </div>
     )
 }

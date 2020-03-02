@@ -61,7 +61,7 @@ class App extends Component{
             <div id='main-container'>
                 <NavBar user={user} toggleShowMenu={this.toggleShowMenu}/>
                 {this.state.showMenu && <NavBarMenu signOut={this.signOut} toggleShowMenu={this.toggleShowMenu}/>}
-                {this.state.showMenu  && <Brackdrop/>}
+                {this.state.showMenu  && <Brackdrop toggleShowMenu={this.toggleShowMenu}/>}
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
                     <Route path='/home' render={props => <HomePage {...props} user={user}/>}/>
