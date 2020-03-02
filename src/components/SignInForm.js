@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import API from '../API'
 
@@ -60,7 +61,7 @@ class SignInForm  extends Component {
     render(){
         return(
             <>
-                 <div className='errors'>
+                <div className='errors'>
                     <p>{this.state.usernameErrors}</p>
                     <p>{this.state.passwordErrors}</p>
                 </div>
@@ -73,6 +74,7 @@ class SignInForm  extends Component {
                     <input className='button' type='submit' value='Sign In'/>
                 </form>
 
+                <p>Don’t have an account? <Link to='/signup'>Sign up</Link></p>
             </>
         )
     }

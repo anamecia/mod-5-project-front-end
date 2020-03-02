@@ -10,7 +10,7 @@ class Chart extends Component{
                 datasets: [
                     {
                         label: `${this.props.medicine.medicine.brand_name} ${this.props.medicine.medicine.dosage}`,
-                        backgroundColor: '#24C6DC',
+                        backgroundColor: '#c8e5e6',
                         data: this.props.medicine.taken_doses.map(taken_dose => taken_dose.count)
                     }
                     ]
@@ -27,7 +27,7 @@ class Chart extends Component{
                         {responsive: true, 
                             scales: {
                                 xAxes: [{
-                                    barPercentage: 0.2
+                                    barPercentage: 0.3
                                 }],
                                 yAxes: [
                                     {ticks: 

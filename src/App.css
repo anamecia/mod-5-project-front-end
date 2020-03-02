@@ -401,7 +401,25 @@ body{
     border-radius: 30%;
 }
 
+.sign-pages {
+ display: flex;
+ flex-direction: column;
+ width: 85%;
+ height: 55%;
+}
 
+.sign-pages p {
+    font-size: 0.7em;
+    width: 60%;
+    margin-top: 10%;
+}
+
+
+.sign-pages p a{
+    text-decoration: none;
+    color: #94D75B;
+    font-weight: 700;
+}
 
 .sign-form{
     display: flex;
@@ -444,10 +462,11 @@ body{
     align-items: center;
     justify-content: flex-end;
     color: #ff7a70;
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: center;
     margin: 0;
     height: 95%;
+    width: 100%;
 }
 
 .errors p {
@@ -808,8 +827,7 @@ body{
     flex-direction: column;
      width: 73%;
      font-size: 0.7em;
-     background: rgb(255, 255, 255);
-    
+     background: rgb(255, 255, 255); 
 }
 
 #search-result{

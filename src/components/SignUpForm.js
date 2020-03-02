@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import API from '../API'
+import { Link } from 'react-router-dom'
 var moment = require('moment');
 
 
@@ -105,6 +106,8 @@ class SignUpForm extends Component {
                     <input className='input' onChange={this.handleChange} type='password' name='passwordConfirmation' value={this.passwordConfirmation}/>
                     <input class='button'type='submit'value='Sign Up'/>
                 </form>
+
+                <p>Already have an Open Air account? <Link to='/signin'>Sign in</Link></p>
             </>
         )
     } 

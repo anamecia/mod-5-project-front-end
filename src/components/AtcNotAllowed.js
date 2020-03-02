@@ -7,7 +7,7 @@ const AtcNotAllowed = ({ nextAtcDate}) => {
     return(
         <div className='atc-not-allowed-container'>
             <h3>You've completed the last Asthma Control Test  in less than a month!</h3>
-            <h1>You next test in due in <span>{remainingDay}</span></h1>
+            <h1>Your next test in due in <span>{remainingDay}</span></h1>
             <Link to='/home'>Back</Link>
         </div>
     )
