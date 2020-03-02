@@ -25,18 +25,23 @@ class Chart extends Component{
                 <Bar data={this.state.data}
                     options={
                         {responsive: true, 
-                            scales: {yAxes: [
-                                {ticks: 
-                                    { 
-                                        beginAtZero: true, 
-                                        stepSize: 1, 
-                                        scaleLabel: {
-                                            display: true, 
-                                            labelString: 'number of doses'
-                                        }
-                                    }
+                            scales: {
+                                xAxes: [{
+                                    barPercentage: 0.2
                                 }],
-                            }
+                                yAxes: [
+                                    {ticks: 
+                                        { 
+                                            beginAtZero: true, 
+                                            stepSize: 1, 
+                                            scaleLabel: {
+                                                display: true, 
+                                                labelString: 'number of doses'
+                                            }
+                                        }
+                                    }],
+                                 }
+
                         }
                     }
                 />
