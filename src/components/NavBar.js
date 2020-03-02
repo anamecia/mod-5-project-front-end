@@ -6,7 +6,7 @@ const NarBar = ({user , toggleShowMenu}) => {
         return(
             <div id='nav-bar-container'>
                 <div id='nav-bar'>
-                    <Link to='/home' id='title'>Open Air</Link>
+                    <Link to={user ? '/home' : '/'} id='title'>Open Air</Link>
                     {user && <i className="fa fa-bars" onClick={toggleShowMenu}></i>}
                 </div>
             </div>
