@@ -221,7 +221,6 @@ body{
     flex-direction: column;
     width: 100%;
     background:#c8e5e6;
-
     color: white
 }
 
@@ -628,9 +627,6 @@ body{
     margin-top: 10%; 
 }
 
-
-
-
 /* MY DRUGS PAGE */
 
 #my-drugs-container{
@@ -745,6 +741,7 @@ body{
 }
 
 .dose-button{
+    position: relative;;
     border-radius: 100%;
     padding: 0;
     height:30px;
@@ -754,12 +751,18 @@ body{
     align-self: flex-start;
     align-content: center;
     justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px #bbbebe;
+}
+
+.dose-button:active{
+    padding: 2px;
+    box-shadow: 0 0;
 }
 
 .dose-button img{
     width: 70%;
     height: 70%;
-    
 }
 
 .add-button{

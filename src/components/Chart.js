@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2';
+var moment = require('moment');
+
 
 
 class Chart extends Component{
@@ -17,9 +19,20 @@ class Chart extends Component{
                 }
             }
 
+    selectedData = () => {
+        const periodOfTime = this.props.selectedOption === 'lastSevenDays' ? 7 : 30
+        console.log(periodOfTime)
+        const limit = moment().subtract(periodOfTime, 'days')._d
+        const takenDoses = this.props.medicine.taken_doses.map(takenDose => takenDose)
+        const takenDosesOnSelectedPeriod = takenDoses.filter(takenDose => moment(takenDose.created_at) >= limit ) 
+        console.log(limit)
+        console.log(takenDosesOnSelectedPeriod)
+    }
 
     render(){
         if (this.props.medicine.taken_doses.length > 0)
+        {this.selectedData()}
+
         return(
             <div className='chart'>
                 <Bar data={this.state.data}
