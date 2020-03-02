@@ -488,7 +488,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 80%;
-    width: 80%;
+    width: 100%;
 }
 
 #question-container{
@@ -538,7 +538,7 @@ body{
     flex-direction: column;
     align-self: center;
     justify-self: flex-end;
-    width: 65%;
+    width: 75%;
     padding: 6%;
     color:white;
     background-color: rgb(172, 171, 171);
@@ -557,8 +557,8 @@ body{
 .atc-not-allowed-container{
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 50%;
+    width: 100%;
+    height: 60%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -566,19 +566,32 @@ body{
 .atc-not-allowed-container h3{
     text-align: center;
     font-size: 1.1em;
+    background: #c2e4e5;
+    padding: 4%;
+    color: white;
+    border-radius: 3%;
+    line-height: 1.5em;
 }
 
 .atc-not-allowed-container h1{
     text-align: center;
     font-size: 1.6em;
+    background:#c2e4e5;
+    padding: 4%;
+    color:white;
+    border-radius: 3%;
+
 }
 
 .atc-not-allowed-container h1 span{
-    color: white;
+    /* color: white; */
     text-align: center;
     font-size: 1.4em;
-    background: linear-gradient(to left, #24c6dc, #514a9d);
+    background: -webkit-linear-gradient( #24c6dc, #514a9d);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     border-radius: 3%;
+
     padding: 0 2%;
 }
 
@@ -601,13 +614,13 @@ body{
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    height: 60%;
+    height: 85%;
 }
 
 .start-atc-container div p{
     color: white;
     text-align: center;
-    font-size: 0.95em;
+    font-size: 1.1em;
     font-weight: 700;
     line-height: 1.6em;
     background: #c2e4e5;
