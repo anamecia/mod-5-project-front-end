@@ -438,6 +438,21 @@ body{
     margin-top: 10%;   
 }
 
+.errors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #ff7a70;
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0;
+    height: 95%;
+}
+
+.errors p {
+    margin: 0;
+}
 
 /* ASTHMA CONTROL TEST */
 

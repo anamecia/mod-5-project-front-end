@@ -81,10 +81,12 @@ class SignUpForm extends Component {
     render(){
         return(
             <>
-                <div>{this.state.usernameErrors}</div>
-                <div>{this.state.dateOfBirthErrors}</div>
-                <div>{this.state.passwordErrors}</div>
-                <div>{this.state.passwordConfirmationErrors}</div>
+                <div className='errors'>
+                    <p>{this.state.usernameErrors}</p>
+                    <p>{this.state.dateOfBirthErrors}</p>
+                    <p>{this.state.passwordErrors}</p>
+                    <p>{this.state.passwordConfirmationErrors}</p>
+                </div>
 
 
                 <form className='sign-form' onSubmit={this.handleSubmit}>

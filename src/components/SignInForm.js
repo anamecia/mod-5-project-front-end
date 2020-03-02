@@ -60,8 +60,10 @@ class SignInForm  extends Component {
     render(){
         return(
             <>
-                <div>{this.state.usernameErrors}</div>
-                <div>{this.state.passwordErrors}</div>
+                 <div className='errors'>
+                    <p>{this.state.usernameErrors}</p>
+                    <p>{this.state.passwordErrors}</p>
+                </div>
               
                 <form className='sign-form'onSubmit={this.handleSubmit}>
                     <label>Username</label>
