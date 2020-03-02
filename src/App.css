@@ -914,10 +914,13 @@ body{
 
 .notes-container div div{
     display: flex;
-    align-items: center;
-    width: 50%;
+    justify-content: flex-end;
 }
 
+.notes-container div p{
+    justify-self: flex-start;
+    width: 100%;
+}
 
 .notes-container div div img{
     width: 20px;
