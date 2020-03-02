@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 import API from '../API'
+var moment = require('moment');
+
+
 
 const initialState = {
     username: '',
@@ -42,6 +45,8 @@ class SignUpForm extends Component {
         if (this.state.password.length < 8)
             passwordErrors = 'Password must be at least 8 characters'
 
+        if (moment(this.state.dateOfBirth) > new Date())
+            dateOfBirthErrors = 'Invalid Date'
         if (!this.state.username)
             usernameErrors = 'Username is required'
 
