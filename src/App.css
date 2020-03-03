@@ -584,7 +584,6 @@ body{
 }
 
 .atc-not-allowed-container h1 span{
-    /* color: white; */
     text-align: center;
     font-size: 1.4em;
     background: -webkit-linear-gradient( #24c6dc, #514a9d);
@@ -1004,8 +1003,6 @@ body{
     font-size: 14px;
     margin: 15px;
 }
- 
-
 
 .score-container{
     display: flex;
@@ -1016,6 +1013,35 @@ body{
 .score-container span{
     font-size: 0.9em;
     margin: 3% 0;
+}
+
+.score-not-available{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 80%;
+    padding: 4%;
+    background: #c2e4e5;
+    border-radius: 3%;
+    margin-top: 4%;
+    
+}
+
+.score-not-available p{
+    width: 100%;
+    text-align: center;
+    margin: 2% 0;
+    color:white;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.score-not-available p a{
+    text-decoration: none;
+    cursor: pointer;
+    background: -webkit-linear-gradient( #24c6dc, #514a9d);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* LOADER */
