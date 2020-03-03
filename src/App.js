@@ -20,7 +20,6 @@ class App extends Component{
     state = {
         user: null,
         showMenu: false,
-        showModal: false
     }
 
     signIn = (data) => {
@@ -49,25 +48,19 @@ class App extends Component{
         })
     }
 
-    toggleShowModal = () => {
-        this.setState({
-            showModal: !this.state.showModal
-        })
-    }
-
     render(){
         const { user } = this.state
         return(
             <div id='main-container'>
                 <NavBar user={user} toggleShowMenu={this.toggleShowMenu}/>
                 {this.state.showMenu && <NavBarMenu signOut={this.signOut} toggleShowMenu={this.toggleShowMenu}/>}
-                {this.state.showMenu  && <Brackdrop toggleShowMenu={this.toggleShowMenu}/>}
+                {this.state.showMenu && <Brackdrop toggleShowMenu={this.toggleShowMenu}/>}
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
                     <Route path='/home' render={props => <HomePage {...props} user={user}/>}/>
                     <Route path='/signup' render={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
                     <Route path='/signin' render={props => <SignInPage {...props} signIn={this.signIn}/>}/>
-                    <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={user} toggleShowModal={this.toggleShowModal}/>}/>
+                    <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={user}/>}/>
                     <Route path='/atc' render={props => <AtcPage {...props} user={user}/>}/>
                     <Route path='/notes' render={props => <Notes {...props} user={user}/>}/> 
                     <Route path='/report' render={props => <Report {...props} user={user}/>}/>
