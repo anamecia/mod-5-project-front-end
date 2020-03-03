@@ -14,6 +14,7 @@ const usersAtcsUrl = railsBaseUrl + 'useratcs'
 const lastAtcUrl = railsBaseUrl + 'lastatc'
 const deleteNoteUrl = railsBaseUrl + '/deletenote/'
 const updateNoteUrl = railsBaseUrl + '/updatenote/'
+const updateTakenDosesUrl = railsBaseUrl + '/updatetakendoses/'
 
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
@@ -103,6 +104,8 @@ const deleteNote = (id) => destroy(deleteNoteUrl, id)
 
 const updateNote = (id, data) => patch(updateNoteUrl, id, data)
 
+const updateTakenDoses = (id, data) =>patch(updateTakenDosesUrl, id, data)
+
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
@@ -111,4 +114,4 @@ const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezo
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes, createNote, getUserAtcs, getLastAtc, deleteNote, updateNote}
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes, createNote, getUserAtcs, getLastAtc, deleteNote, updateNote, updateTakenDoses}

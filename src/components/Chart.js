@@ -54,7 +54,7 @@ class Chart extends Component{
             <div className='chart'>
                 <div className='radio-btn-container'>
                 <label>Last 7 Days</label>
-                    <input id='one' type = "radio" value='lastSevenDays' checked={this.state.selectedOption === 'lastSevenDays'} onChange={this.handleChange}/>
+                    <input id='' type = "radio" value='lastSevenDays' checked={this.state.selectedOption === 'lastSevenDays'} onChange={this.handleChange}/>
                     <input id='two' type = "radio" value='lastThirtyDays' checked={this.state.selectedOption === 'lastThirtyDays'} onChange={this.handleChange}/>
                 <label>Last 30 Days</label>
                 </div>

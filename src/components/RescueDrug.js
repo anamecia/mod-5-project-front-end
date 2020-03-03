@@ -24,7 +24,7 @@ class RescueDrug extends Component{
                 date: moment().format("Do MMM YYYY")
             }
 
-            API.updateRx(drug.id,data)
+            API.updateTakenDoses(drug.id,data)
             .then(updatedDrug => updateUserMedicines(drug, updatedDrug))
         } else 
             this.setState({
