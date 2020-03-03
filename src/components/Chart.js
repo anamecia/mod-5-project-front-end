@@ -2,39 +2,62 @@ import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2';
 var moment = require('moment');
 
-
-
 class Chart extends Component{
 
     state = {
-        data : {
-                labels: this.props.medicine.taken_doses.map(taken_dose => taken_dose.date),
+        data:{
+            labels:[],
+            datasets:[]
+        },
+        selectedOption: 'lastThirtyDays'
+    }
+
+   componentDidMount = () => {
+        this.selectDate()
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            selectedOption: event.target.value
+        },this.selectDate
+        )
+    }
+
+    selectedData = (data) => {
+        this.setState({
+            data : {
+                labels: data.map(taken_dose => taken_dose.date),
                 datasets: [
                     {
-                        label: `${this.props.medicine.medicine.brand_name} ${this.props.medicine.medicine.dosage}`,
+                        label: `${this.props.medicine.medicine.brand_name}`,
                         backgroundColor: '#c8e5e6',
-                        data: this.props.medicine.taken_doses.map(taken_dose => taken_dose.count)
+                        data: data.map(taken_dose => taken_dose.count)
                     }
                     ]
                 }
             }
+        )
+    }
 
-    selectedData = () => {
-        const periodOfTime = this.props.selectedOption === 'lastSevenDays' ? 7 : 30
-        console.log(periodOfTime)
+    selectDate = () => {
+        const periodOfTime = this.state.selectedOption === 'lastSevenDays' ? 7 : 30
         const limit = moment().subtract(periodOfTime, 'days')._d
         const takenDoses = this.props.medicine.taken_doses.map(takenDose => takenDose)
-        const takenDosesOnSelectedPeriod = takenDoses.filter(takenDose => moment(takenDose.created_at) >= limit ) 
-        console.log(limit)
-        console.log(takenDosesOnSelectedPeriod)
+        const data = takenDoses.filter(takenDose => moment(takenDose.created_at)._d >= limit)
+        this.selectedData(data)
     }
 
     render(){
         if (this.props.medicine.taken_doses.length > 0)
-        {this.selectedData()}
-
         return(
+
             <div className='chart'>
+                <div className='radio-btn-container'>
+                <label>Last 7 Days</label>
+                    <input id='one' type = "radio" value='lastSevenDays' checked={this.state.selectedOption === 'lastSevenDays'} onChange={this.handleChange}/>
+                    <input id='two' type = "radio" value='lastThirtyDays' checked={this.state.selectedOption === 'lastThirtyDays'} onChange={this.handleChange}/>
+                <label>Last 30 Days</label>
+                </div>
                 <Bar data={this.state.data}
                     options={
                         {responsive: true, 
