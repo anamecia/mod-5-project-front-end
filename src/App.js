@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter} from 'react-router-dom'
+import { Route, Switch, withRouter, Redirect} from 'react-router-dom'
 
 import './App.css'
 import NavBar from './components/NavBar'
@@ -14,7 +14,6 @@ import Notes from './pages/Notes'
 import Report from './pages/ReportPage'
 import NavBarMenu from './components/NavBarMenu'
 import Brackdrop from './components/Backdrop'
-import Modal from './components/Modal'
 
 class App extends Component{
     state = {
@@ -48,6 +47,10 @@ class App extends Component{
         })
     }
 
+    authorizedUser = () => localStorage.token ? true : false
+
+
+
     render(){
         const { user } = this.state
         return(
@@ -57,13 +60,13 @@ class App extends Component{
                 {this.state.showMenu && <Brackdrop toggleShowMenu={this.toggleShowMenu}/>}
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
-                    <Route path='/home' render={props => <HomePage {...props} user={user}/>}/>
-                    <Route path='/signup' render={props => <SignUpPage {...props} signIn={this.signIn}/>}/>
-                    <Route path='/signin' render={props => <SignInPage {...props} signIn={this.signIn}/>}/>
-                    <Route path='/mydrugs' render={ props => <MyDrugs {...props} user={user}/>}/>
-                    <Route path='/atc' render={props => <AtcPage {...props} user={user}/>}/>
-                    <Route path='/notes' render={props => <Notes {...props} user={user}/>}/> 
-                    <Route path='/report' render={props => <Report {...props} user={user}/>}/>
+                    <Route path='/home' render={props => this.authorizedUser() ? <HomePage {...props} user={user}/> : <Redirect to='/'/>}/>
+                    <Route path='/signup' render={props => !this.authorizedUser() ? <SignUpPage {...props} signIn={this.signIn}/> : <Redirect to='/home'/>}/>
+                    <Route path='/signin' render={props => !this.authorizedUser() ? <SignInPage {...props} signIn={this.signIn}/> : <Redirect to='/home'/>}/>
+                    <Route path='/mydrugs' render={ props => this.authorizedUser() ? <MyDrugs {...props} user={user}/> : <Redirect to='/'/>}/>
+                    <Route path='/atc' render={props => this.authorizedUser() ? <AtcPage {...props} user={user}/> : <Redirect to='/'/>}/>
+                    <Route path='/notes' render={props => this.authorizedUser() ? <Notes {...props} user={user}/> :  <Redirect to='/'/>}/> 
+                    <Route path='/report' render={props => this.authorizedUser() ? <Report {...props} user={user}/> :  <Redirect to='/'/>}/>
                     <Route component={prosp => <h1>404 - Page not found</h1>}/>
                 </Switch>
             </div>

@@ -22,14 +22,10 @@ class MyDrugs extends Component {
     
 
     componentDidMount = () => {
-        // if(this.props.user === null) {
-        //     this.props.history.push('/')
-        // } else{
-            API.getUserMedicines()
-            .then(data => this.setState({ userDrugs:data }))
-        // }  
-    }
-
+        API.getUserMedicines()
+        .then(data => this.setState({ userDrugs:data }))
+    }  
+   
     userRescueDrugs = () => 
         this.state.userDrugs.filter(drug => drug.rescue)
     

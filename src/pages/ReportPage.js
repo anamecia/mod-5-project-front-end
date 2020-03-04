@@ -11,13 +11,9 @@ class Report extends Component {
     }
 
     componentDidMount = () => {
-        // if(this.props.user === null) {
-        //     this.props.history.push('/')
-        // } else {
-            API.getUserAtcs()
-            .then(data => this.setState({ userAtcs: data}))
-        }
-    // }
+        API.getUserAtcs()
+        .then(data => this.setState({ userAtcs: data}))
+    }
 
     userLastAtcs = () => {
         const { userAtcs } = this.state

@@ -31,10 +31,7 @@ class HomePage extends Component{
     }
 
     componentDidMount(){
-        // if(this.props.user === null) {
-        //     this.props.history.push('/')
-        // } else
-         this.checkBrowserGeolocation()
+        this.checkBrowserGeolocation()
     }
 
     render(){

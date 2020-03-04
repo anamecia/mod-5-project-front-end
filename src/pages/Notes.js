@@ -12,15 +12,11 @@ class Notes extends Component{
     }
 
     componentDidMount = () => {
-        // if(this.props.user === null) {
-        //     this.props.history.push('/')
-        // } else{
-            API.getUserNotes()
-            .then(data => this.setState({
-            notes:  data.sort((a,b) => (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0))
+        API.getUserNotes()
+        .then(data => this.setState({
+        notes:  data.sort((a,b) => (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0))
         }))
-        }
-    // }
+    }
 
     toggleShowAddForm = () => {
         this.setState({

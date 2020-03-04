@@ -1,7 +1,7 @@
 import React from 'react'
 import API from '../API'
 import bin from '../images/bin.svg'
-import leaflet from '../images/leaflet.svg'
+import info from '../images/information.svg'
 
 
 const DrugMoreInfo = ({ drug, deleteUseMedicine, resetPackaging}) => {
@@ -15,7 +15,7 @@ const DrugMoreInfo = ({ drug, deleteUseMedicine, resetPackaging}) => {
         <>
             <button id='reset-button' onClick={resetPackaging}>reset</button>
             <div className='logos-container'>
-                <a className='logo' rel='noopener noreferrer' href={drug.medicine.leaflet} target="_blank"><img className='drug-more-info-logo' src={leaflet}/></a>
+                <a className='logo' rel='noopener noreferrer' href={drug.medicine.leaflet} target="_blank"><img className='drug-more-info-logo' src={info}/></a>
                 <button className='logo' onClick={deleteUserDrug}><img className='drug-more-info-logo' src={bin}/></button>
             </div>
         </>
