@@ -26,7 +26,7 @@ class SignUpForm extends Component {
             if (data.error) throw Error(data.error)
                 this.props.signIn(data)
                 this.props.history.push('/home') 
-            }).catch(error => this.setState({signUpErrors: error.message.split(',')})) 
+            }).catch(error => this.setState({signUpErrors: error.message})) 
     }
 
     render(){

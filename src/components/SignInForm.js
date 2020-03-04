@@ -2,58 +2,59 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import API from '../API'
+import Errors from '../containers/Errors'
 
-const initialState= {
-    username: '',
-    password: '',
-    usernameErrors: '',
-    passwordErrors:'',
-    loginError: ''
-}
+// const initialState= {
+//     username: '',
+//     password: '',
+//     usernameErrors: '',
+//     passwordErrors:'',
+//     loginError: ''
+// }
 
 class SignInForm  extends Component {
     state = {
         username: '',
         password: '',
-        usernameErrors: '',
-        passwordErrors:'',
-        loginError: ''
+        // usernameErrors: '',
+        // passwordErrors:'',
+        signInErrors: []
     }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value})
     }
 
-    validate = () => {
-        let usernameErrors = ''
-        let passwordErrors = ''
+    // validate = () => {
+    //     let usernameErrors = ''
+    //     let passwordErrors = ''
 
-        if (!this.state.username)
-            usernameErrors = 'Username is required'
+    //     if (!this.state.username)
+    //         usernameErrors = 'Username is required'
 
-        if (!this.state.password)
-            passwordErrors = 'Password is required'
-        if (usernameErrors || passwordErrors){
-            this.setState({usernameErrors, passwordErrors})
-            return false
-        }
+    //     if (!this.state.password)
+    //         passwordErrors = 'Password is required'
+    //     if (usernameErrors || passwordErrors){
+    //         this.setState({usernameErrors, passwordErrors})
+    //         return false
+    //     }
 
-        return true 
-    }
+    //     return true 
+    // }
 
     handleSubmit = (e) =>{
         e.preventDefault()
          
-       if(this.validate()){
+    //    if(this.validate()){
             API.signIn(this.state.username, this.state.password)
             .then(data => {
                 if (data.error) throw Error(data.error)
                 this.props.signIn(data)
                 this.props.history.push('/home') 
-            }).catch(error => alert(error))  //change alert to a nicer notification
+            }).catch(error => this.setState({signInErrors: error.message.split(',')}))  //change alert to a nicer notification
             
-            this.setState(initialState)
-        }
+            // this.setState(initialState)
+        // }
 
         
     }
@@ -61,11 +62,11 @@ class SignInForm  extends Component {
     render(){
         return(
             <>
-                <div className='errors'>
+                {/* <div className='errors'>
                     <p>{this.state.usernameErrors}</p>
                     <p>{this.state.passwordErrors}</p>
-                </div>
-              
+                </div> */}
+                <Errors errors={this.state.signInErrors}/>
                 <form className='sign-form'onSubmit={this.handleSubmit}>
                     <label>Username</label>
                     <input className='input'onChange={this.handleChange} type='text' name='username' value={this.state.username}/>
