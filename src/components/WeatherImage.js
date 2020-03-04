@@ -7,6 +7,7 @@ import drizzle from '../images/drizzle.svg'
 import snow from '../images/snow.svg'
 import storm from '../images/storm.svg'
 import windy from '../images/windy.svg'
+import satellite from '../images/satellite.svg'
 
 const WeatherImage = ({ weatherDescription }) => {
 
@@ -54,6 +55,8 @@ const WeatherImage = ({ weatherDescription }) => {
             || weatherDescription === 'Light rain, thunderstorms likely'
             || weatherDescription === 'Heavy rain, thunderstorms likely')
             return storm
+
+        return satellite
     }
 
     return(

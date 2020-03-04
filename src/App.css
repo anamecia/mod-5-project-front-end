@@ -798,21 +798,23 @@ body{
     flex-direction: column;
     position:fixed;
     padding: 4%;
-    background-color: #c2e4e5;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    color: white;
     align-self: center;
+    background-color: white;
     margin-bottom: 4%;
-    border-radius: 3%;
+    border-radius: 2%;
     z-index: 300;
     top:30%
 }
 
 .modal p{
-    color: white;
-    font-weight: 700;
+    color:rgb(56, 55, 55);
     margin: 2% 0;
     text-align: center;
+}
+
+.modal :first-child{
+    font-weight: 700;
 }
 
 .modal-buttons{
@@ -822,12 +824,18 @@ body{
 }
 
 .modal-buttons button{
-    color:white;
     font-size: 1.1em;
     font-weight: 700;
-    margin-top: 2%;
+    color:white;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(to left, #24c6dc, #514a9d);
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.25);  
+    padding: 0.4em;
+    width: 25%;
+    margin-top: 10%; 
 }
-
 
 /* SEARCH */
 
