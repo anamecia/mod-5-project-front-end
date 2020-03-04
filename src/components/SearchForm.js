@@ -37,7 +37,7 @@ class SearchForm extends Component{
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>
-                <input id='search-form'onChange={this.handleChange} value={this.state.searchTerm} type='text' placeholder='Search by brand name'/>
+                <input id='search-form' autoFocus="autofocus" onChange={this.handleChange} value={this.state.searchTerm} type='text' placeholder='Search by brand name'/>
                 <div id='search-results'>
                 {searchedMedicines.map(medicine => <SearchResults 
                     user={user}
