@@ -14,7 +14,7 @@ var moment = require('moment');
 class AtcPage extends Component{
     state = {
         questionNumber: null,
-        score:0,
+        score: 0,
         nextAtcDate: null
     }
 

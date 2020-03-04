@@ -15,8 +15,8 @@ const DrugMoreInfo = ({ drug, deleteUseMedicine, resetPackaging}) => {
         <>
             <button id='reset-button' onClick={resetPackaging}>reset</button>
             <div className='logos-container'>
-                <a className='logo' rel='noopener noreferrer' href={drug.medicine.leaflet} target="_blank"><img className='drug-more-info-logo' src={info}/></a>
-                <button className='logo' onClick={deleteUserDrug}><img className='drug-more-info-logo' src={bin}/></button>
+                <a className='logo' rel='noopener noreferrer' href={drug.medicine.leaflet} target="_blank"><img className='drug-more-info-logo' src={info} alt='leaflet'/></a>
+                <button className='logo' onClick={deleteUserDrug}><img className='drug-more-info-logo' src={bin} alt='delete'/></button>
             </div>
         </>
     )

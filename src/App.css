@@ -1092,4 +1092,24 @@ body{
       height: 32px;
     }
   }
-  
+
+  /* NOT FOUND CONTAINER */
+
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 50%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.not-found-container img{
+    width: 8em;
+    height: 8em;
+}
+
+.not-found-container p{
+    font-size: 2em;
+    color: rgb(54, 54, 54);
+}

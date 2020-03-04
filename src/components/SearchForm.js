@@ -33,7 +33,7 @@ class SearchForm extends Component{
     }
 
     render(){
-        const { user, medicineType,addNewMedicineToUserDrugs, updateMedicineType, closeSearchForm} = this.props
+        const { user, medicineType,addNewMedicineToUserDrugs, closeSearchForm} = this.props
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>

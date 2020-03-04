@@ -14,6 +14,7 @@ import Notes from './pages/Notes'
 import Report from './pages/ReportPage'
 import NavBarMenu from './components/NavBarMenu'
 import Brackdrop from './components/Backdrop'
+import NotFoundPage from './pages/NotFoundPage'
 
 class App extends Component{
     state = {
@@ -67,7 +68,7 @@ class App extends Component{
                     <Route path='/atc' render={props => this.authorizedUser() ? <AtcPage {...props} user={user}/> : <Redirect to='/'/>}/>
                     <Route path='/notes' render={props => this.authorizedUser() ? <Notes {...props} user={user}/> :  <Redirect to='/'/>}/> 
                     <Route path='/report' render={props => this.authorizedUser() ? <Report {...props} user={user}/> :  <Redirect to='/'/>}/>
-                    <Route component={prosp => <h1>404 - Page not found</h1>}/>
+                    <Route component={NotFoundPage}/>
                 </Switch>
             </div>
         )
