@@ -33,7 +33,7 @@ class SearchForm extends Component{
     }
 
     render(){
-        const { user, medicineType,addNewMedicineToUserDrugs, updateMedicineType } = this.props
+        const { user, medicineType,addNewMedicineToUserDrugs, updateMedicineType, closeSearchForm} = this.props
         const searchedMedicines = this.searchMedicinesByBrandOrDrugName()
         return(
             <div id='search-form-container'>
@@ -42,10 +42,10 @@ class SearchForm extends Component{
                 {searchedMedicines.map(medicine => <SearchResults 
                     user={user}
                     medicine={medicine} 
-                    updateMedicineType ={updateMedicineType}
                     key={medicine.id} 
                     medicineType={medicineType} 
-                    addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}/>)}
+                    addNewMedicineToUserDrugs={addNewMedicineToUserDrugs}
+                    closeSearchForm={closeSearchForm}/>)}
                 </div>
             </div>
         )

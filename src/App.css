@@ -810,7 +810,6 @@ body{
 
 .modal p{
     color: white;
-    font-size: 0.9em;
     font-weight: 700;
     margin: 2% 0;
     text-align: center;
@@ -822,8 +821,11 @@ body{
     justify-content: space-around;
 }
 
-.modal-buttons{
-    color:white
+.modal-buttons button{
+    color:white;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 2%;
 }
 
 

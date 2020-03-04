@@ -65,9 +65,9 @@ class MyDrugs extends Component {
                     {medicineType && <SearchForm 
                         user={user}
                         medicineType={medicineType} 
-                        updateMedicineType={this.updateMedicineType}
                         userDrugs={userDrugs}
-                        addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}/>}
+                        addNewMedicineToUserDrugs={this.addNewMedicineToUserDrugs}
+                        closeSearchForm={this.closeSearchForm}/>}
                 </div>
                     {medicineType && <Backdrop closeSearchForm={this.closeSearchForm}/>}
                 <div id='drugs-container'>
