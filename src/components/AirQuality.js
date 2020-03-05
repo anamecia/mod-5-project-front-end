@@ -4,46 +4,60 @@ import API from '../API'
 class AirQuality extends Component{
 
     state = {
-        airQualityInfo: {
-            "display_name": "BreezoMeter AQI",
-            "aqi": 76,
-            "aqi_display": "76",
-            "color": "#69C534",
-            "category": "Good air quality",
-            "dominant_pollutant": "o3"
-        }
+        airQualityInfo: null
+        // airQualityInfo: {
+        //         "baqi": {
+        //             "display_name": "BreezoMeter AQI",
+        //             "aqi": 86,
+        //             "aqi_display": "86",
+        //             "color": "#3DB436",
+        //             "category": "Excellent air quality",
+        //             "dominant_pollutant": "o3"
+        //         }
+            
+        // }
     }
 
     componentDidMount = () => {
         // API.getAirQuality(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))
-        // add catch to handle errors
+        // .then(airQualityData => {
+        //     if(airQualityData.data.indexes.baqi) 
+        //         this.setState({airQualityInfo: airQualityData.data.indexes.baqi})
+        //     if(!airQualityData.data.indexes.baqi)
+                API.getAirQualityBin()
+                .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))      
+        // })
     }
+    
 
     airQualityDescription = () => {
-        const airQuality = this.state.airQualityInfo.aqi
-        if (airQuality >= 0 &&  airQuality <= 50)
-            return 'Good' 
-        if (airQuality >= 51 &&  airQuality <= 100)
-            return 'Moderate'
-        if (airQuality >= 101 &&  airQuality <= 150)
-            return 'Unhealthy for Sensitive Group'
-        if (airQuality >= 150 &&  airQuality <= 200)
-            return 'Unhealthy'
-        if (airQuality >= 201 &&  airQuality <= 300)
-            return 'Very Unhealthy'
-        if (airQuality >= 301 &&  airQuality <=500)
-            return 'Hazardous'
+        if(this.state.airQualityInfo){
+            const airQuality = this.state.airQualityInfo.aqi
+            if (airQuality >= 0 &&  airQuality <= 50)
+                return 'Good' 
+            if (airQuality >= 51 &&  airQuality <= 100)
+                return 'Moderate'
+            if (airQuality >= 101 &&  airQuality <= 150)
+                return 'Unhealthy for Sensitive Group'
+            if (airQuality >= 150 &&  airQuality <= 200)
+                return 'Unhealthy'
+            if (airQuality >= 201 &&  airQuality <= 300)
+                return 'Very Unhealthy'
+            if (airQuality >= 301 &&  airQuality <=500)
+                return 'Hazardous'
+        } 
     }
 
     airQualityColor = () => {
-        const airQuality = this.state.airQualityInfo.aqi
+        if (this.state.airQualityInfo){
+            const airQuality = this.state.airQualityInfo.aqi
         if (airQuality >= 0 &&  airQuality <= 50)
             return '#c8eba0' 
         if (airQuality >= 51 &&  airQuality <= 100)
             return '#ffdb80'
         if (airQuality >= 101 &&  airQuality <= 500)
             return '#ff7a70'
+        } 
     }
 
     render(){

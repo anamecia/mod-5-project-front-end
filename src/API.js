@@ -1,3 +1,5 @@
+import AirPollutants from "./components/AirPollutants"
+
 const railsBaseUrl = 'http://localhost:3000/'
 const signInUrl = railsBaseUrl + 'signin'
 const signUpUrl = railsBaseUrl + 'signup'
@@ -19,6 +21,11 @@ const updateTakenDosesUrl = railsBaseUrl + '/updatetakendoses/'
 const weatherBreezoApi = 'https://api.breezometer.com/weather/v1/current-conditions?'
 const airQualityBreezoApi = 'https://api.breezometer.com/air-quality/v2/current-conditions?'
 const pollenCountBreezoApi = 'https://api.breezometer.com/pollen/v2/forecast/daily?'
+
+const airQualityBinUrl = 'https://api.npoint.io/206d00acd3e1d4577c47'
+const pollenCountBinUrl = 'https://api.npoint.io/cc917d7494fe4b095654'
+const AirPollutantsBin = 'https://api.npoint.io/5fb16f763a2f1d9d5d90'
+const weatherBinUrl = 'https://api.npoint.io/42e7f172aeedc8fab98e'
 
 
 
@@ -108,10 +115,18 @@ const updateTakenDoses = (id, data) =>patch(updateTakenDosesUrl, id, data)
 
 const getWeather = (latitude, longitude, breezoKey) => get(weatherBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
 
+const getWeatherBin = () => get(weatherBinUrl)
+
 const getAirQuality = (latitude, longitude, breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}`)
+
+const getAirQualityBin = () => get(airQualityBinUrl)
 
 const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=health_recommendations, pollutants_concentrations, sources_and_effects`)
 
+const getAirPollutantsBin = () => get(AirPollutantsBin)
+
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 
-export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes, createNote, getUserAtcs, getLastAtc, deleteNote, updateNote, updateTakenDoses}
+const getPollenCountBin = () => get(pollenCountBinUrl)
+
+export default { signIn, signUp, validate, getWeather, getAirQuality, getAirPollutants , getPollenCount, getMedicines, getUserMedicines, postMedicine, updateRx, deleteRx, createAtc, getUserNotes, createNote, getUserAtcs, getLastAtc, deleteNote, updateNote, updateTakenDoses, getAirQualityBin, getPollenCountBin, getAirPollutantsBin, getWeatherBin}
