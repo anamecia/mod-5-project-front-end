@@ -24,7 +24,7 @@ const pollenCountBreezoApi = 'https://api.breezometer.com/pollen/v2/forecast/dai
 
 const airQualityBinUrl = 'https://api.npoint.io/206d00acd3e1d4577c47'
 const pollenCountBinUrl = 'https://api.npoint.io/cc917d7494fe4b095654'
-const AirPollutantsBin = 'https://api.npoint.io/5fb16f763a2f1d9d5d90'
+const airPollutantsBinUrl = 'https://api.npoint.io/01a08b64943f62a942ae'
 const weatherBinUrl = 'https://api.npoint.io/42e7f172aeedc8fab98e'
 
 
@@ -123,7 +123,7 @@ const getAirQualityBin = () => get(airQualityBinUrl)
 
 const getAirPollutants = (latitude, longitude,breezoKey) => get(airQualityBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=health_recommendations, pollutants_concentrations, sources_and_effects`)
 
-const getAirPollutantsBin = () => get(AirPollutantsBin)
+const getAirPollutantsBin = () => get(airPollutantsBinUrl)
 
 const getPollenCount = (latitude, longitude, breezoKey) => get(pollenCountBreezoApi + `lat=${latitude}&lon=${longitude}&key=${breezoKey}&features=types_information,plants_information&days=1`) 
 

@@ -88,7 +88,7 @@ class AirPollutants extends Component{
         //         {this.setState({airPollutantsInfo: airPollutantsData.data.pollutants})}
             // if(!airPollutantsData.data.pollutants)
                 API.getAirPollutantsBin()
-                .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData}))
+                .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData.data.pollutants}))
         // })
     }
 
