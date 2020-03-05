@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import API from '../API'
-import Note from '../components/Note'
-import NoteForm from '../components/NoteForm'
+import Note from '../components/Note';
+import NoteForm from '../components/NoteForm';
 
 class Notes extends Component{
 
@@ -55,7 +55,8 @@ class Notes extends Component{
         const notesArray = [...this.state.notes]
         notesArray.splice(index, 1, updatedNote)
         this.setState({
-            userDrugs: notesArray
+            userDrugs: notesArray,
+            selectedNote: updatedNote
         })
     }
 

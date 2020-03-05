@@ -25,7 +25,7 @@ class PollenCount extends Component{
                     "in_season": false,
                     "data_available": false,
                     "index": {
-                        "value": null,
+                        "value": 0,
                         "category": null,
                         "color": null
                     }
@@ -54,10 +54,10 @@ class PollenCount extends Component{
                 },
                 "graminales": {
                     "display_name": "Graminales",
-                    "in_season": false,
+                    "in_season": true,
                     "data_available": false,
                     "index": {
-                        "value": null,
+                        "value": 0,
                         "category": null,
                         "color": null
                     }
@@ -94,25 +94,66 @@ class PollenCount extends Component{
     grassValue = () => {
         if(this.state.pollenCountInfo)
             if(!this.state.pollenCountInfo.types.grass.in_season)
+                return null
+            if (this.state.pollenCountInfo.types.grass.index.value === 0)
+                return 0
+            if (this.state.pollenCountInfo.types.grass.index.value === 1)
                 return 1
+            if (this.state.pollenCountInfo.types.grass.index.value === 2)
+                return 2
+            if (this.state.pollenCountInfo.types.grass.index.value === 3)
+                return 3
+            if(!this.state.pollenCountInfo.types.grass.index.value === 4)
+                return 4
     }
 
     treeValue = () => {
         if(this.state.pollenCountInfo)
             if(!this.state.pollenCountInfo.types.tree.in_season)
+                return null
+            if (this.state.pollenCountInfo.types.tree.index.value === 0)
+                return 0
+            if (this.state.pollenCountInfo.types.tree.index.value === 1)
                 return 1
+            if (this.state.pollenCountInfo.types.tree.index.value === 2)
+                return 2
+            if (this.state.pollenCountInfo.types.tree.index.value === 3)
+                return 3
+            if(!this.state.pollenCountInfo.types.tree.index.value === 4)
+                return 4
+          
     }
 
     graminalesValue = () => {
             if(this.state.pollenCountInfo)
-                if(!this.state.pollenCountInfo.types.tree.in_season)
+                if(!this.state.pollenCountInfo.plants.graminales.in_season)
+                    return null
+                if (this.state.pollenCountInfo.plants.graminales.index.value === 0)
+                    return 0
+                if (this.state.pollenCountInfo.plants.graminales.index.value === 1)
                     return 1
+                if (this.state.pollenCountInfo.plants.graminales.index.value === 2)
+                    return 2
+                if (this.state.pollenCountInfo.plants.graminales.index.value === 3)
+                    return 3
+                if(!this.state.pollenCountInfo.plants.graminales.index.value === 4)
+                    return 4        
     }
 
     ragweedValue = () => {
         if(this.state.pollenCountInfo)
-            if(!this.state.pollenCountInfo.types.ragweed.in_season)
+            if(!this.state.pollenCountInfo.plants.ragweed.in_season)
+                return null
+            if (this.state.pollenCountInfo.plants.ragweed.index.value === 0)
+                return 0
+            if (this.state.pollenCountInfo.plants.ragweed.index.value === 1)
                 return 1
+            if (this.state.pollenCountInfo.plants.ragweed.index.value === 2)
+                return 2
+            if (this.state.pollenCountInfo.plants.ragweed.index.value === 3)
+                return 3
+            if(!this.state.pollenCountInfo.plants.ragweed.index.value === 4)
+                return 4
     }
 
 
@@ -126,41 +167,41 @@ class PollenCount extends Component{
                     <div className='plant-container'>
                        <p>Grass</p>
                        <div>
+                        <span style={{background:this.grassValue() === 0 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.grassValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.grassValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.grassValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.grassValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
-                        <span style={{background:this.grassValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                        </div>
                     </div>
                     <div className='plant-container'>
                        <p>Tree</p>
                        <div>
+                        <span style={{background:this.treeValue() === 0 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.treeValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.treeValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.treeValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                         <span style={{background:this.treeValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
-                        <span style={{background:this.treeValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                        </div>
                     </div>
                     <div className='plant-container'>
                        <p>Graminales</p>
                        <div>
+                            <span style={{background:this.graminalesValue() === 0 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.graminalesValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.graminalesValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.graminalesValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.graminalesValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
-                            <span style={{background:this.graminalesValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                        </div>
                     </div>
                     <div className='plant-container'> 
                         <p>Ragweed</p>
                         <div>
+                            <span style={{background:this.grassValue() === 0 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.grassValue() === 1 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.grassValue() === 2 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.grassValue() === 3 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                             <span style={{background:this.grassValue() === 4 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
-                            <span style={{background:this.grassValue() === 5 ? 'white' : 'rgba(191, 190, 186, 0.3)'}}></span>
                        </div>
                     </div>
                 </div>

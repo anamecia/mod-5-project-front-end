@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import API from '../API'
+import Error from '../components/Error';
+import TextEditor from './TextEditor';
+
+
+
 
 class NoteForm extends Component{
+
     state ={
         title: this.props.selectedNote ? this.props.selectedNote.title : '',
-        content: this.props.selectedNote ? this.props.selectedNote.content : ''
+        content: this.props.selectedNote ? this.props.selectedNote.content : '',
+        noteErrors: []
     }
 
     handleChange = (e) => {
@@ -12,6 +19,12 @@ class NoteForm extends Component{
             [e.target.name]: e.target.value 
         })
     }
+
+    // handleChangeTextarea = (value) => {
+    //     this.setState({
+    //         content: value
+    //     })
+    // }
 
     handleClick = () => {
         const data = {
@@ -32,8 +45,11 @@ class NoteForm extends Component{
         const { addNote, toggleShowAddForm } = this.props
         
         API.createNote(data)
-        .then(data => addNote(data))
-        .then(() => toggleShowAddForm())
+        .then(data =>{
+            if (data.error) throw Error(data.error)
+            addNote(data)
+            toggleShowAddForm()
+            }).catch( error  => console.log(data.error[0]))
     }
 
     updateNote = (id, data) =>{
@@ -44,15 +60,23 @@ class NoteForm extends Component{
         .then(()=> toggleShowAddForm())
     }
 
+   
+
     render(){
         return(
-            <div className='notes-form-container'>
-                <input onChange={this.handleChange} type='text' placeholder='Title' name='title' value={this.state.title}/>
-                <textarea onChange={this.handleChange} name='content' value={this.state.content}/>
-                <button onClick={this.handleClick}>Save</button>
-            </div>
+            <>
+                {/* <Error error={this.state.noteErrors}/> */}
+                <div className='notes-form-container'>
+                    <input onChange={this.handleChange} type='text' placeholder='Title' name='title' value={this.state.title}/>
+                    <textarea onChange={this.handleChange} name='content' value={this.state.content}/>
+                    {/* <Editor  className='note-content' editorState={this.state.editorState} onChange={this.onChange} /> */}
+                    {/* <TextEditor/> */}
+                    <button className="notes-save-button" onClick={this.handleClick}>Save</button>
+                </div>
+            </>
         )
     } 
 }
 
 export default NoteForm
+
