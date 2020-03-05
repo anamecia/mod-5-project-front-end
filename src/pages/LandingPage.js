@@ -14,10 +14,9 @@ const LandingPage = () => {
                     <button><Link to='/signin'>Sign in</Link></button>
                     <button><Link to='/signup'>Sign up</Link></button>
                 </div>
+                <div className='background-image'></div>
             </div>
-            <div className='main-image-container'>
-                <img src={forest} alt='forest'/>
-            </div>
+            
         </div>
     )
 }
