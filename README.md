@@ -19,9 +19,9 @@ You will need to run the back end of this project which can be found [here](http
 
 ## Registration
 
-<img scr='./images-readme/landing-page.png' width='200'/>
-<img scr='./images-readme/sign-up-page.png' width='200'/>
-<img scr='./images-readme/sign-in-page.png' width='200'/>
+<img src='./images-readme/landing-page.png' width='200'/>
+<img src='./images-readme/sign-up-page.png' width='200'/>
+<img src='./images-readme/sign-in-page.png' width='200'/>
 
 
 It is mandatory to have an Open Air account for the user to be able to use the app. 
@@ -29,7 +29,7 @@ It is mandatory to have an Open Air account for the user to be able to use the a
 
 ## Home Page 
 
-<img scr='./images-readme/home-page.png' width='200'/>
+<img src='./images-readme/home-page.png' width='200'/>
 
 Home Page shows the user the current weather condition, air quality, quantity of air pollutants and pollen count, based on the user's current location. All these parameter can affect asthmatic patients. 
 
