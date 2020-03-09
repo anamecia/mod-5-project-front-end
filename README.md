@@ -2,6 +2,9 @@
 
 Open Air is a platform that helps asthmatic patients manage their condition.
 
+<video src="https://youtu.be/ImWQ35hdiJg" width="320" height="200" controls preload></video>
+
+
 ## Getting Started
 
 In the project directory, you can run:
