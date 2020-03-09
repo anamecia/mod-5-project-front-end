@@ -88,14 +88,14 @@ class PollenCount extends Component{
 
 
     componentDidMount = () => {
-        // API.getPollenCount(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(pollenCountData => {
-        //     if(pollenCountData.data[0])
-        //         this.setState({pollenCountInfo: pollenCountData.data[10]})
-        //     if(!pollenCountData.data[0])
+        API.getPollenCount(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(pollenCountData => {
+            if(pollenCountData.data[0])
+                this.setState({pollenCountInfo: pollenCountData.data[0]})
+            if(!pollenCountData.data[0])
                 API.getPollenCountBin()
                 .then(pollenCountData => this.setState({pollenCountInfo: pollenCountData.data[0]}))
-        // })
+        })
     }
 
     grassValue = () => {

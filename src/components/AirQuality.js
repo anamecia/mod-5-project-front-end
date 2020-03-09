@@ -19,14 +19,14 @@ class AirQuality extends Component{
     }
 
     componentDidMount = () => {
-        // API.getAirQuality(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(airQualityData => {
-        //     if(airQualityData.data.indexes.baqi) 
-        //         this.setState({airQualityInfo: airQualityData.data.indexes.baqi})
-        //     if(!airQualityData.data.indexes.baqi)
+        API.getAirQuality(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(airQualityData => {
+            if(airQualityData.data.indexes.baqi) 
+                this.setState({airQualityInfo: airQualityData.data.indexes.baqi})
+            if(!airQualityData.data.indexes.baqi)
                 API.getAirQualityBin()
                 .then(airQualityData => this.setState({airQualityInfo: airQualityData.data.indexes.baqi}))      
-        // })
+        })
     }
     
 

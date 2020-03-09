@@ -82,14 +82,14 @@ class AirPollutants extends Component{
     }
 
     componentDidMount = () => {
-        // API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(airPollutantsData => {
-        //     if (airPollutantsData.data.pollutants)
-        //         {this.setState({airPollutantsInfo: airPollutantsData.data.pollutants})}
-            // if(!airPollutantsData.data.pollutants)
+        API.getAirPollutants(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(airPollutantsData => {
+            if (airPollutantsData.data.pollutants)
+                {this.setState({airPollutantsInfo: airPollutantsData.data.pollutants})}
+            if(!airPollutantsData.data.pollutants)
                 API.getAirPollutantsBin()
                 .then(airPollutantsData => this.setState({airPollutantsInfo: airPollutantsData.data.pollutants}))
-        // })
+        })
     }
 
     coValue = () => {

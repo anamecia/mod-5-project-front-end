@@ -229,7 +229,8 @@ body{
     flex-direction: column;
     width: 100%;
     background:#c8e5e6;
-    color: white
+    color: white;
+    min-height: 25%;
 }
 
 .weather-subcontainer{
@@ -295,6 +296,7 @@ body{
     align-items: center;
     width: 100%;
     margin: 2% 0 2% 0;
+    min-height: 10%;
 }
 
 .air-quality-container :first-child{
@@ -321,6 +323,7 @@ body{
     align-items: center;
     width: 85%;
     margin: 2% 0 2% 0;
+    min-height: 10%;
 }
 
 .air-pollutans-container p{
@@ -881,7 +884,7 @@ body{
 .notes-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     height: 100%;
     align-items: center;
     margin-top: 15%;
@@ -970,6 +973,7 @@ body{
 .note-title{
     font-size: 0.9em;
     font-size: 700;
+    align-self: flex-start;
   }
 
 .note-content{

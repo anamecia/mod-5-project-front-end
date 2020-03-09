@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import API from '../API'
-import Error from '../components/Error';
-import TextEditor from './TextEditor';
+import Errors from '../containers/Errors';
 
 
 
@@ -20,12 +19,6 @@ class NoteForm extends Component{
         })
     }
 
-    // handleChangeTextarea = (value) => {
-    //     this.setState({
-    //         content: value
-    //     })
-    // }
-
     handleClick = () => {
         const data = {
             note:{
@@ -33,12 +26,12 @@ class NoteForm extends Component{
                 content: this.state.content
             }
         }
-        
+
         if(this.props.selectedNote){
             this.updateNote(this.props.selectedNote.id, data)
         }else{
             this.createNewNote(data)
-        }
+        }  
     }
 
     createNewNote = (data) => {
@@ -46,10 +39,8 @@ class NoteForm extends Component{
         
         API.createNote(data)
         .then(data =>{
-            if (data.error) throw Error(data.error)
             addNote(data)
-            toggleShowAddForm()
-            }).catch( error  => console.log(data.error[0]))
+            toggleShowAddForm()})
     }
 
     updateNote = (id, data) =>{
@@ -60,17 +51,22 @@ class NoteForm extends Component{
         .then(()=> toggleShowAddForm())
     }
 
+    validationForContent = () => {
+        if(!this.state.content){
+            this.setState({noteErrors: ["Note content can't be empty"]})
+            return false
+        }
+    }
+
    
 
     render(){
         return(
             <>
-                {/* <Error error={this.state.noteErrors}/> */}
+                {/* <Errors errors={this.state.noteErrors}/> */}
                 <div className='notes-form-container'>
                     <input onChange={this.handleChange} type='text' placeholder='Title' name='title' value={this.state.title}/>
                     <textarea onChange={this.handleChange} name='content' value={this.state.content}/>
-                    {/* <Editor  className='note-content' editorState={this.state.editorState} onChange={this.onChange} /> */}
-                    {/* <TextEditor/> */}
                     <button className="notes-save-button" onClick={this.handleClick}>Save</button>
                 </div>
             </>

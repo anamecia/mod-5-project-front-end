@@ -56,14 +56,14 @@ class Weather extends Component {
     }
 
     componentDidMount = () => {
-        // API.getWeather(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
-        // .then(weatherInfo => {
-                // if( weatherInfo.data)
-                // this.setState({weatherInfo: weatherInfo.data})
-    //             if(!weatherInfo.data)
+        API.getWeather(this.props.latitude, this.props.longitude, process.env.REACT_APP_BREEZO_KEY)
+        .then(weatherInfo => {
+                if( weatherInfo.data)
+                this.setState({weatherInfo: weatherInfo.data})
+                if(!weatherInfo.data)
                 API.getWeatherBin()
                 .then(weatherInfo => this.setState({weatherInfo: weatherInfo.data}))
-    //     })
+        })
     }
 
     render(){
