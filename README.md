@@ -27,13 +27,13 @@ It is mandatory to have an Open Air account for the user to be able to use the a
 
 ## Home Page 
 
-<img src='./images-readme/home-page.png' width='200'/>
+<img src='./images-readme/home-page.png' width='250'/>
 
 Home Page shows the user the current weather condition, air quality, quantity of air pollutants and pollen count, based on the user's current location. All these parameter can affect asthmatic patients. 
 
 ## My Drugs Page
 
-<img src='./images-readme/my-drugs-page.png' width='200'/> <img src='./images-readme/my-drugs-details.png' width='200'/><img src='./images-readme/my-drugs-search.png' width='200'/>
+<img src='./images-readme/my-drugs-page.png' width='250'/> <img src='./images-readme/my-drugs-details.png' width='250'/><img src='./images-readme/my-drugs-search.png' width='250'/>
 
 Users can add their rescue drugs (used by asthmatic patient for asthma attacks) and regular drugs (used every day as preventers).
 For each drug the users can:
@@ -46,17 +46,17 @@ For each drug the users can:
 
 Users can take an Asthma Control Test once a month to check how well control their asthma has been for the past 4 weeks. At the end of the test the user is given a score and a small description.
 
-<img src='./images-readme/atc-page-start.png' width='200'/><img src='./images-readme/atc-page-question.png' width='200'/><img src='./images-readme/atc-page-result.png' width='200'/>
+<img src='./images-readme/atc-page-start.png' width='250'/><img src='./images-readme/atc-page-question.png' width='250'/><img src='./images-readme/atc-page-result.png' width='250'/>
 
 ## Notes
 
-<img src='./images-readme/notes-page.png' width='200'/><img src='./images-readme/notes-page-add.png' width='200'/><img src='./images-readme/notes-page-details.png' width='200'/>
+<img src='./images-readme/notes-page.png' width='200'/><img src='./images-readme/notes-page-add.png' width='250'/><img src='./images-readme/notes-page-details.png' width='250'/>
 
 Users can take notes, edit and delete them.
 
 ## Report
 
-<img src='./images-readme/report-page.png' width='200'/>
+<img src='./images-readme/report-page.png' width='250'/>
 
 Users have access to a resport that shows a chart with the rescue drug usage for the last 7 days or 30 days, as well as the last 6 Asthma Control Test scores.
 
