@@ -21,7 +21,7 @@ You will need to run the back end of this project which can be found [here](http
 
 ## Registration
 
-<img src='./images-readme/landing-page.png' width='300'/> <img src='./images-readme/sign-up-page.png' width='300'/> <img src='./images-readme/sign-in-page.png' width='300'/>
+<img src='./images-readme/landing-page.png' width='250'/> <img src='./images-readme/sign-up-page.png' width='250'/> <img src='./images-readme/sign-in-page.png' width='250'/>
 
 It is mandatory to have an Open Air account for the user to be able to use the app. 
 
