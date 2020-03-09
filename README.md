@@ -3,7 +3,7 @@
 Open Air is a platform that helps asthmatic patients manage their condition.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ImWQ35hdiJg" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180"/></a>
+alt="OPEN AIR VIDEO" width="240" height="180"/></a>
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 ### Prerequisites
 
-You will need to run the back end of this project which can be found [here](https://github.com/anamecia/mod-5-project-back-end)
+You will first need to run the back end of this project, on http://localhost:3000, which can be found [here](https://github.com/anamecia/mod-5-project-back-end)
 
 ## Registration
 
@@ -41,9 +41,9 @@ Home Page shows the user the current weather condition, air quality, quantity of
 Users can add their rescue drugs (used by asthmatic patient for asthma attacks) and regular drugs (used every day as preventers).
 For each drug the users can:
 - log every time they take the medicine, decreasing the number of remaining doses
-- delete drug
+- delete a drug
 - open in a new tab the drug information leaflet
-- reset number of doses
+- reset the number of doses
 
 ## Asthma Control Test 
 
