@@ -2,8 +2,9 @@
 
 Open Air is a platform that helps asthmatic patients manage their condition.
 
-[![OPEN AIR VIDEO](https://img.youtube.com/vi/ImWQ35hdiJg/0.jpg)]
-(https://www.youtube.com/watch?v=ImWQ35hdiJg)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=ImWQ35hdiJg
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Getting Started
 
