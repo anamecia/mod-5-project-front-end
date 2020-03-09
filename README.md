@@ -48,7 +48,7 @@ Users can take an Asthma Control Test once a month to check how well control the
 
 ## Notes
 
-<img src='./images-readme/note-page.png' width='200'/><img src='./images-readme/note-page-add.png' width='200'/><img src='./images-readme/note-page-details.png' width='200'/>
+<img src='./images-readme/notes-page.png' width='200'/><img src='./images-readme/notes-page-add.png' width='200'/><img src='./images-readme/notes-page-details.png' width='200'/>
 
 Users can take notes, edit and delete them.
 
