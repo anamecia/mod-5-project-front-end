@@ -9,7 +9,7 @@
     "chart.js": "^2.9.3",
     "dotenv": "^8.2.0",
     "draft-js": "^0.11.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.13.0",
     "react-burger-menu": "^2.6.13",
     "react-chartjs-2": "^2.9.0",
